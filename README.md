@@ -11,7 +11,7 @@ A simple Expo React Native cafeteria app for Android and iOS with local SQLite s
 
 ## Setup
 
-1. Open a terminal in `c:\Users\Robert's PC\Desktop\TQOrders`
+1. Open a terminal
 2. Install dependencies:
    - `npm install`
 3. Start the Expo development server:
