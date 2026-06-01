@@ -13,6 +13,7 @@ import {
   Image,
   Alert,
   BackHandler,
+  Modal,
 } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'react-native';
@@ -37,23 +38,63 @@ import {
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 const SCALE = SCREEN_WIDTH < 420 ? 0.72 : 1;
 
-const TABLE_POSITIONS = {
+const SALON_POSITIONS = {
   1: { left: SCREEN_WIDTH * 0.06, top: 120 * SCALE, width: 96 * SCALE, height: 96 * SCALE },
   2: { left: SCREEN_WIDTH * 0.06, top: 240 * SCALE, width: 96 * SCALE, height: 96 * SCALE },
   3: { left: SCREEN_WIDTH * 0.18, top: 240 * SCALE, width: 96 * SCALE, height: 96 * SCALE },
   4: { left: SCREEN_WIDTH * 0.30, top: 240 * SCALE, width: 96 * SCALE, height: 96 * SCALE },
   5: { left: SCREEN_WIDTH * 0.42, top: 72 * SCALE, width: 240 * SCALE, height: 84 * SCALE },
-  6: { left: SCREEN_WIDTH * 0.44, top: 188 * SCALE, width: 56 * SCALE, height: 44 * SCALE },
-  7: { left: SCREEN_WIDTH * 0.56, top: 188 * SCALE, width: 56 * SCALE, height: 44 * SCALE },
-  8: { left: SCREEN_WIDTH * 0.68, top: 188 * SCALE, width: 56 * SCALE, height: 44 * SCALE },
-  9: { left: SCREEN_WIDTH * 0.80, top: 188 * SCALE, width: 56 * SCALE, height: 44 * SCALE },
-  10: { left: SCREEN_WIDTH * 0.52, top: 92 * SCALE, width: 92 * SCALE, height: 92 * SCALE },
-  11: { left: SCREEN_WIDTH * 0.64, top: 92 * SCALE, width: 92 * SCALE, height: 92 * SCALE },
-  12: { left: SCREEN_WIDTH * 0.76, top: 92 * SCALE, width: 92 * SCALE, height: 92 * SCALE },
-  13: { left: SCREEN_WIDTH * 0.88, top: 92 * SCALE, width: 92 * SCALE, height: 92 * SCALE },
-  14: { left: SCREEN_WIDTH * 0.62, top: 252 * SCALE, width: 96 * SCALE, height: 96 * SCALE },
-  15: { left: SCREEN_WIDTH * 0.74, top: 252 * SCALE, width: 96 * SCALE, height: 96 * SCALE },
+  6: { left: SCREEN_WIDTH * 0.52, top: 92 * SCALE, width: 92 * SCALE, height: 92 * SCALE },
+  7: { left: SCREEN_WIDTH * 0.64, top: 92 * SCALE, width: 92 * SCALE, height: 92 * SCALE },
+  8: { left: SCREEN_WIDTH * 0.76, top: 92 * SCALE, width: 92 * SCALE, height: 92 * SCALE },
+  9: { left: SCREEN_WIDTH * 0.88, top: 92 * SCALE, width: 92 * SCALE, height: 92 * SCALE },
+  10: { left: SCREEN_WIDTH * 0.62, top: 252 * SCALE, width: 96 * SCALE, height: 96 * SCALE },
+  11: { left: SCREEN_WIDTH * 0.74, top: 252 * SCALE, width: 96 * SCALE, height: 96 * SCALE },
 };
+
+const TERASA_POSITIONS = {
+  'T1': { left: SCREEN_WIDTH * 0.05, top: 120 * SCALE, width: 80 * SCALE, height: 80 * SCALE },
+  'T2': { left: SCREEN_WIDTH * 0.20, top: 120 * SCALE, width: 80 * SCALE, height: 80 * SCALE },
+  'T3': { left: SCREEN_WIDTH * 0.35, top: 120 * SCALE, width: 80 * SCALE, height: 80 * SCALE },
+  'T4': { left: SCREEN_WIDTH * 0.50, top: 120 * SCALE, width: 80 * SCALE, height: 80 * SCALE },
+  'T5': { left: SCREEN_WIDTH * 0.65, top: 120 * SCALE, width: 80 * SCALE, height: 80 * SCALE },
+  'T6': { left: SCREEN_WIDTH * 0.80, top: 120 * SCALE, width: 80 * SCALE, height: 80 * SCALE },
+  'T7': { left: SCREEN_WIDTH * 0.95, top: 120 * SCALE, width: 80 * SCALE, height: 80 * SCALE, marginLeft: -85 * SCALE },
+};
+
+const ConfirmationModal = ({ visible, title, message, confirmText, cancelText, onConfirm, onCancel, isDangerous }) => (
+  <Modal
+    visible={visible}
+    transparent
+    animationType="fade"
+    onRequestClose={onCancel}
+  >
+    <View style={styles.modalOverlay}>
+      <View style={styles.modalContent}>
+        <Text style={styles.modalTitle}>{title}</Text>
+        <Text style={styles.modalMessage}>{message}</Text>
+        <View style={styles.modalButtonRow}>
+          {cancelText && (
+            <TouchableOpacity
+              style={[styles.modalButton, styles.modalCancelButton]}
+              onPress={onCancel}
+            >
+              <Text style={styles.modalCancelButtonText}>{cancelText}</Text>
+            </TouchableOpacity>
+          )}
+          {confirmText && (
+            <TouchableOpacity
+              style={[styles.modalButton, isDangerous ? styles.modalDangerButton : styles.modalConfirmButton]}
+              onPress={onConfirm}
+            >
+              <Text style={styles.modalButtonText}>{confirmText}</Text>
+            </TouchableOpacity>
+          )}
+        </View>
+      </View>
+    </View>
+  </Modal>
+);
 
 export default function App() {
   const [tables, setTables] = useState([]);
@@ -72,6 +113,16 @@ export default function App() {
   const [selectedView, setSelectedView] = useState('floor');
   const [historyEntries, setHistoryEntries] = useState([]);
   const [expandedHistoryIds, setExpandedHistoryIds] = useState([]);
+  const [selectedFloor, setSelectedFloor] = useState('Salon');
+  const [modalState, setModalState] = useState({
+    visible: false,
+    title: '',
+    message: '',
+    confirmText: '',
+    cancelText: '',
+    onConfirm: null,
+    isDangerous: false,
+  });
 
   const categories = Array.from(new Set(menuItems.map(item => item.category))).sort();
 
@@ -133,6 +184,10 @@ export default function App() {
 
   useEffect(() => {
     const onBackPress = () => {
+      if (modalState.visible) {
+        setModalState(prev => ({ ...prev, visible: false }));
+        return true;
+      }
       if (selectedTable) {
         setSelectedTable(null);
         return true;
@@ -146,7 +201,7 @@ export default function App() {
 
     const subscription = BackHandler.addEventListener('hardwareBackPress', onBackPress);
     return () => subscription.remove();
-  }, [selectedTable, selectedView]);
+  }, [selectedTable, selectedView, modalState.visible]);
 
   const reloadTables = async () => {
     const tablesData = await getTables();
@@ -244,14 +299,18 @@ export default function App() {
   };
 
   const confirmClearAllTables = () => {
-    Alert.alert(
-      'Clear all tables',
-      'This will remove every open order and note from all tables. Do you want to continue?',
-      [
-        { text: 'Cancel', style: 'cancel' },
-        { text: 'Yes, clear all', style: 'destructive', onPress: handleClearAllTables },
-      ]
-    );
+    setModalState({
+      visible: true,
+      title: 'Clear all tables',
+      message: 'This will remove every open order and note from all tables. Do you want to continue?',
+      confirmText: 'Yes, clear all',
+      cancelText: 'Cancel',
+      onConfirm: () => {
+        setModalState(prev => ({ ...prev, visible: false }));
+        handleClearAllTables();
+      },
+      isDangerous: true,
+    });
   };
 
   const handleClearTableOrders = async () => {
@@ -265,14 +324,18 @@ export default function App() {
   };
 
   const confirmClearTableOrders = () => {
-    Alert.alert(
-      'Clear table',
-      `Clear all items and notes from ${selectedTable?.name || 'this table'}?`,
-      [
-        { text: 'Cancel', style: 'cancel' },
-        { text: 'Clear table', style: 'destructive', onPress: handleClearTableOrders },
-      ]
-    );
+    setModalState({
+      visible: true,
+      title: 'Clear table',
+      message: `Clear all items and notes from ${selectedTable?.name || 'this table'}?`,
+      confirmText: 'Clear table',
+      cancelText: 'Cancel',
+      onConfirm: () => {
+        setModalState(prev => ({ ...prev, visible: false }));
+        handleClearTableOrders();
+      },
+      isDangerous: true,
+    });
   };
 
   const handleFinishTableOrder = async () => {
@@ -299,14 +362,18 @@ export default function App() {
   };
 
   const confirmFinishTableOrder = () => {
-    Alert.alert(
-      'Finish order',
-      'Finish this order and move it to history? The table will be cleared afterward.',
-      [
-        { text: 'Cancel', style: 'cancel' },
-        { text: 'Finish order', style: 'default', onPress: handleFinishTableOrder },
-      ]
-    );
+    setModalState({
+      visible: true,
+      title: 'Finish order',
+      message: 'Finish this order and move it to history? The table will be cleared afterward.',
+      confirmText: 'Finish order',
+      cancelText: 'Cancel',
+      onConfirm: () => {
+        setModalState(prev => ({ ...prev, visible: false }));
+        handleFinishTableOrder();
+      },
+      isDangerous: false,
+    });
   };
 
   const orderTotal = orders.reduce((total, order) => total + order.price * order.quantity, 0);
@@ -334,7 +401,6 @@ export default function App() {
       </SafeAreaProvider>
     );
   }
-
   if (selectedTable) {
     return (
       <SafeAreaProvider>
@@ -538,12 +604,22 @@ export default function App() {
             )}
           </>
         )}
+        <ConfirmationModal
+        visible={modalState.visible}
+        title={modalState.title}
+        message={modalState.message}
+        confirmText={modalState.confirmText}
+        cancelText={modalState.cancelText}
+        onConfirm={modalState.onConfirm}
+        onCancel={() => setModalState(prev => ({ ...prev, visible: false }))}
+        isDangerous={modalState.isDangerous}
+      />
         </SafeAreaView>
       </SafeAreaProvider>
     );
   }
 
-  const visibleTables = tables;
+  const visibleTables = tables.filter(table => table.floor === selectedFloor);
 
   return (
     <SafeAreaProvider>
@@ -619,9 +695,25 @@ export default function App() {
             )}
           </View>
         ) : (
-          <View style={styles.floorPlan}>
+          <>
+            <View style={styles.floorNavigationRow}>
+              <TouchableOpacity
+                style={[styles.floorButton, selectedFloor === 'Salon' && styles.floorButtonActive]}
+                onPress={() => setSelectedFloor('Salon')}
+              >
+                <Text style={[styles.floorButtonText, selectedFloor === 'Salon' && styles.floorButtonTextActive]}>Salon</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={[styles.floorButton, selectedFloor === 'Terasa' && styles.floorButtonActive]}
+                onPress={() => setSelectedFloor('Terasa')}
+              >
+                <Text style={[styles.floorButtonText, selectedFloor === 'Terasa' && styles.floorButtonTextActive]}>Terasa</Text>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.floorPlan}>
           {visibleTables.map(table => {
-            const pos = TABLE_POSITIONS[table.id] || { left: 0, top: 0, width: 96 * SCALE, height: 96 * SCALE };
+            const positionMap = selectedFloor === 'Salon' ? SALON_POSITIONS : TERASA_POSITIONS;
+            const pos = positionMap[selectedFloor === 'Salon' ? table.id : table.name] || { left: 0, top: 0, width: 96 * SCALE, height: 96 * SCALE };
             const sizeStyle = {
               width: pos.width || 96 * SCALE,
               height: pos.height || 96 * SCALE,
@@ -643,7 +735,18 @@ export default function App() {
             );
           })}
         </View>
+          </>
       )}
+      <ConfirmationModal
+        visible={modalState.visible}
+        title={modalState.title}
+        message={modalState.message}
+        confirmText={modalState.confirmText}
+        cancelText={modalState.cancelText}
+        onConfirm={modalState.onConfirm}
+        onCancel={() => setModalState(prev => ({ ...prev, visible: false }))}
+        isDangerous={modalState.isDangerous}
+      />
       </SafeAreaView>
     </SafeAreaProvider>
   );
@@ -1224,5 +1327,91 @@ const styles = StyleSheet.create({
     color: '#0C4A6E',
     fontWeight: '600',
     marginBottom: 4,
+  },
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modalContent: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 20,
+    padding: 24,
+    maxWidth: '85%',
+    shadowColor: '#000000',
+    shadowOpacity: 0.3,
+    shadowRadius: 20,
+    elevation: 10,
+  },
+  modalTitle: {
+    fontSize: 20,
+    fontWeight: '800',
+    color: '#0F172A',
+    marginBottom: 12,
+  },
+  modalMessage: {
+    fontSize: 16,
+    color: '#475569',
+    marginBottom: 24,
+    lineHeight: 24,
+  },
+  modalButtonRow: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    gap: 12,
+  },
+  modalButton: {
+    borderRadius: 12,
+    paddingVertical: 12,
+    paddingHorizontal: 18,
+    minWidth: 100,
+    alignItems: 'center',
+  },
+  modalConfirmButton: {
+    backgroundColor: '#2563EB',
+  },
+  modalDangerButton: {
+    backgroundColor: '#DC2626',
+  },
+  modalCancelButton: {
+    backgroundColor: '#E2E8F0',
+  },
+  modalButtonText: {
+    color: '#FFFFFF',
+    fontWeight: '700',
+    fontSize: 14,
+  },
+  modalCancelButtonText: {
+    color: '#0F172A',
+    fontWeight: '700',
+    fontSize: 14,
+  },
+  floorNavigationRow: {
+    flexDirection: 'row',
+    marginBottom: 16,
+    gap: 12,
+  },
+  floorButton: {
+    flex: 1,
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    borderRadius: 12,
+    backgroundColor: '#E2E8F0',
+    alignItems: 'center',
+    borderWidth: 2,
+    borderColor: 'transparent',
+  },
+  floorButtonActive: {
+    backgroundColor: '#2563EB',
+    borderColor: '#1E40AF',
+  },
+  floorButtonText: {
+    fontSize: 16,
+    fontWeight: '700',
+    color: '#0F172A',
+  },
+  floorButtonTextActive: {
+    color: '#FFFFFF',
   },
 });

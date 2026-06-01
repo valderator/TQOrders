@@ -19,10 +19,23 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "com.anonymous.tqorders"
+      "package": "com.anonymous.tqorders",
     },
     "plugins": [
+      [
+        "expo-build-properties",
+          {
+            "android": {
+              "enablePngCrunchInReleaseBuilds": false
+            }
+          }
+      ],
       "expo-sqlite"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "f5d89b56-d945-454e-af5e-6444e8c3cc3f"
+      }
+    }
   }
 }

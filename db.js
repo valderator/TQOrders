@@ -52,47 +52,76 @@ async function markTableStarted(tableId) {
 }
 
 export async function initDb() {
+  // await AsyncStorage.clear();
   const existingTables = await getStorageData(TABLES_KEY);
-  const DESIRED_TABLE_COUNT = 15;
+  const DESIRED_TABLE_COUNT = 17; // 11 for Salon + 6 for Terasa
+
   if (existingTables.length === 0) {
-    const defaultTables = Array.from({ length: DESIRED_TABLE_COUNT }, (_, i) => `T${i + 1}`);
-    const tables = defaultTables.map((name, index) => ({
-      id: index + 1,
-      name,
+    // Create Salon tables (1-11 with M1-M10 + BAR names)
+    const salonTables = Array.from({ length: 11 }, (_, i) => ({
+      id: i + 1,
+      name: '',
+      floor: 'Salon',
       status: 'open',
       note: '',
       order_started_at: null,
     }));
+
+    // Create Terasa tables (12-17 with T1-T6 names)
+    const terasaTables = Array.from({ length: 6 }, (_, i) => ({
+      id: i + 12,
+      name: `T${i + 1}`,
+      floor: 'Terasa',
+      status: 'open',
+      note: '',
+      order_started_at: null,
+    }));
+
+    const tables = [...salonTables, ...terasaTables];
     await setStorageData(TABLES_KEY, tables);
   } else if (existingTables.length < DESIRED_TABLE_COUNT) {
-    // Append missing tables without removing existing ones (migration)
+    // Migration: add missing tables and floor property
+    const updated = existingTables.map(t => ({
+      ...t,
+      floor: t.floor || 'Salon',
+    }));
+
     const missing = [];
     for (let i = existingTables.length + 1; i <= DESIRED_TABLE_COUNT; i++) {
       missing.push({
         id: i,
-        name: `T${i}`,
+        name: `T${i - 11}`,
+        floor: 'Terasa',
         status: 'open',
         note: '',
         order_started_at: null,
       });
     }
-    const merged = existingTables.concat(missing);
+
+    const merged = updated.concat(missing);
     await setStorageData(TABLES_KEY, merged);
+  } else {
+    // Ensure all existing tables have the floor property
+    const updated = existingTables.map(t => ({
+      ...t,
+      floor: t.floor || (t.id <= 11 ? 'Salon' : 'Terasa'),
+    }));
+    await setStorageData(TABLES_KEY, updated);
   }
 
-  // Normalize table names to match photo layout labels (id -> name)
+  // Normalize Salon table names to match photo layout labels (id -> name)
   const PHOTO_NAMES = {
     1: 'M1', 2: 'M2', 3: 'M3', 4: 'M4',
     5: 'BAR',
-    6: 'S1', 7: 'S2', 8: 'S3', 9: 'S4',
-    10: 'M5', 11: 'M6', 12: 'M7', 13: 'M8', 14: 'M9', 15: 'M10',
+    6: 'M5', 7: 'M6', 8: 'M7', 9: 'M8', 10: 'M9', 11: 'M10',
   };
 
   const finalTables = await getStorageData(TABLES_KEY);
-  if (finalTables.length >= DESIRED_TABLE_COUNT) {
-    const renamed = finalTables.map(t => ({ ...t, name: PHOTO_NAMES[t.id] || t.name }));
-    await setStorageData(TABLES_KEY, renamed);
-  }
+  const renamed = finalTables.map(t => ({
+    ...t,
+    name: t.floor === 'Salon' ? (PHOTO_NAMES[t.id] || t.name) : t.name,
+  }));
+  await setStorageData(TABLES_KEY, renamed);
 
   const existingMenu = await getStorageData(MENU_KEY);
   if (existingMenu.length === 0) {
