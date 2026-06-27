@@ -16,19 +16,23 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.tqorders",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
-      "package": "com.anonymous.tqorders",
+      "package": "com.anonymous.tqorders"
     },
     "plugins": [
       [
         "expo-build-properties",
-          {
-            "android": {
-              "enablePngCrunchInReleaseBuilds": false
-            }
+        {
+          "android": {
+            "enablePngCrunchInReleaseBuilds": false
           }
+        }
       ],
       "expo-sqlite"
     ],
