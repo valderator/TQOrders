@@ -14,6 +14,7 @@ import {
   Alert,
   BackHandler,
   Modal,
+  SectionList,
 } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'react-native';
@@ -33,33 +34,34 @@ import {
   updateOrderNote,
   setTableNote,
   clearTableNote,
+  clearHistory,
 } from './db';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 const SCALE = SCREEN_WIDTH < 420 ? 0.72 : 1;
 
 const SALON_POSITIONS = {
-  1: { left: SCREEN_WIDTH * 0.06, top: 120 * SCALE, width: 96 * SCALE, height: 96 * SCALE },
-  2: { left: SCREEN_WIDTH * 0.06, top: 240 * SCALE, width: 96 * SCALE, height: 96 * SCALE },
-  3: { left: SCREEN_WIDTH * 0.18, top: 240 * SCALE, width: 96 * SCALE, height: 96 * SCALE },
-  4: { left: SCREEN_WIDTH * 0.30, top: 240 * SCALE, width: 96 * SCALE, height: 96 * SCALE },
-  5: { left: SCREEN_WIDTH * 0.42, top: 72 * SCALE, width: 240 * SCALE, height: 84 * SCALE },
-  6: { left: SCREEN_WIDTH * 0.52, top: 92 * SCALE, width: 92 * SCALE, height: 92 * SCALE },
-  7: { left: SCREEN_WIDTH * 0.64, top: 92 * SCALE, width: 92 * SCALE, height: 92 * SCALE },
-  8: { left: SCREEN_WIDTH * 0.76, top: 92 * SCALE, width: 92 * SCALE, height: 92 * SCALE },
-  9: { left: SCREEN_WIDTH * 0.88, top: 92 * SCALE, width: 92 * SCALE, height: 92 * SCALE },
-  10: { left: SCREEN_WIDTH * 0.62, top: 252 * SCALE, width: 96 * SCALE, height: 96 * SCALE },
-  11: { left: SCREEN_WIDTH * 0.74, top: 252 * SCALE, width: 96 * SCALE, height: 96 * SCALE },
+  1: { left: SCREEN_WIDTH * 0.62, top: 0 * SCALE, width: 150 * SCALE, height: 80 * SCALE },
+  2: { left: SCREEN_WIDTH * 0.30, top: 0 * SCALE, width: 150 * SCALE, height: 80 * SCALE },
+  3: { left: SCREEN_WIDTH * 0.02, top: 90 * SCALE, width: 150 * SCALE, height: 80 * SCALE },
+  4: { left: SCREEN_WIDTH * 0.02, top: 190 * SCALE, width: 150 * SCALE, height: 80 * SCALE },
+  5: { left: SCREEN_WIDTH * 0.50, top: 200 * SCALE, width: 150 * SCALE, height: 250 * SCALE },
+  6: { left: SCREEN_WIDTH * 0.02, top: 350 * SCALE, width: 150 * SCALE, height: 80 * SCALE },
+  7: { left: SCREEN_WIDTH * 0.02, top: 450 * SCALE, width: 150 * SCALE, height: 80 * SCALE },
+  8: { left: SCREEN_WIDTH * 0.02, top: 550 * SCALE, width: 150 * SCALE, height: 80 * SCALE },
+  9: { left: SCREEN_WIDTH * 0.02, top: 650 * SCALE, width: 150 * SCALE, height: 80 * SCALE },
+  10: { left: SCREEN_WIDTH * 0.50, top: 550 * SCALE, width: 150 * SCALE, height: 80 * SCALE },
+  11: { left: SCREEN_WIDTH * 0.50, top: 650 * SCALE, width: 150 * SCALE, height: 80 * SCALE },
 };
 
 const TERASA_POSITIONS = {
-  'T1': { left: SCREEN_WIDTH * 0.05, top: 120 * SCALE, width: 80 * SCALE, height: 80 * SCALE },
-  'T2': { left: SCREEN_WIDTH * 0.20, top: 120 * SCALE, width: 80 * SCALE, height: 80 * SCALE },
-  'T3': { left: SCREEN_WIDTH * 0.35, top: 120 * SCALE, width: 80 * SCALE, height: 80 * SCALE },
-  'T4': { left: SCREEN_WIDTH * 0.50, top: 120 * SCALE, width: 80 * SCALE, height: 80 * SCALE },
-  'T5': { left: SCREEN_WIDTH * 0.65, top: 120 * SCALE, width: 80 * SCALE, height: 80 * SCALE },
-  'T6': { left: SCREEN_WIDTH * 0.80, top: 120 * SCALE, width: 80 * SCALE, height: 80 * SCALE },
-  'T7': { left: SCREEN_WIDTH * 0.95, top: 120 * SCALE, width: 80 * SCALE, height: 80 * SCALE, marginLeft: -85 * SCALE },
+  'T1': { left: SCREEN_WIDTH * 0.25, top: 10 * SCALE, width: 210 * SCALE, height: 90 * SCALE },
+  'T2': { left: SCREEN_WIDTH * 0.25, top: 110 * SCALE, width: 210 * SCALE, height: 90 * SCALE },
+  'T3': { left: SCREEN_WIDTH * 0.25, top: 210 * SCALE, width: 210 * SCALE, height: 90 * SCALE },
+  'T4': { left: SCREEN_WIDTH * 0.25, top: 310 * SCALE, width: 210 * SCALE, height: 90 * SCALE },
+  'T5': { left: SCREEN_WIDTH * 0.25, top: 410 * SCALE, width: 210 * SCALE, height: 90 * SCALE },
+  'T6': { left: SCREEN_WIDTH * 0.25, top: 510 * SCALE, width: 210 * SCALE, height: 90 * SCALE },
+  'T7': { left: SCREEN_WIDTH * 0.25, top: 610 * SCALE, width: 210 * SCALE, height: 90 * SCALE },
 };
 
 const ConfirmationModal = ({ visible, title, message, confirmText, cancelText, onConfirm, onCancel, isDangerous }) => (
@@ -114,6 +116,8 @@ export default function App() {
   const [historyEntries, setHistoryEntries] = useState([]);
   const [expandedHistoryIds, setExpandedHistoryIds] = useState([]);
   const [selectedFloor, setSelectedFloor] = useState('Salon');
+  const [occupiedTables, setOccupiedTables] = useState({});
+  const [collapsedSections, setCollapsedSections] = useState([]);
   const [modalState, setModalState] = useState({
     visible: false,
     title: '',
@@ -174,6 +178,14 @@ export default function App() {
     const minutes = String(date.getMinutes()).padStart(2, '0');
 
     return `${day}/${month}/${year}   ${hours}:${minutes}`;
+  };
+
+  const toggleSection = (date) => {
+    setCollapsedSections((prev) =>
+      prev.includes(date)
+        ? prev.filter((d) => d !== date)
+        : [...prev, date]
+    );
   };
 
   const toggleHistoryItems = historyId => {
@@ -313,6 +325,26 @@ export default function App() {
     });
   };
 
+  const handleClearHistory = async () => {
+    await clearHistory();
+    await reloadHistory();
+  };
+
+  const confirmClearHistory = () => {
+    setModalState({
+      visible: true,
+      title: 'Clear history',
+      message: 'This will remove all completed orders from the history. Do you want to continue?',
+      confirmText: 'Yes, clear history',
+      cancelText: 'Cancel',
+      onConfirm: () => {
+        setModalState(prev => ({ ...prev, visible: false }));
+        handleClearHistory();
+      },
+      isDangerous: true,
+    });
+  };
+
   const handleClearTableOrders = async () => {
     if (!selectedTable) return;
     await clearOrdersForTable(selectedTable.id);
@@ -342,7 +374,7 @@ export default function App() {
     if (!selectedTable) return;
     const finishedAt = new Date().toISOString();
     const orderTotal = orders.reduce((total, order) => total + order.price * order.quantity, 0);
-    await addHistoryEntry({
+    const historyEntry = {
       table_id: selectedTable.id,
       table_name: selectedTable.name,
       items: orders.map(order => ({
@@ -355,8 +387,10 @@ export default function App() {
       order_note: orderNote,
       started_at: selectedTable.order_started_at || new Date().toISOString(),
       finished_at: finishedAt,
-      total_price: orderTotal,
-    });
+      total_price: orderTotal
+    }
+    await addHistoryEntry(historyEntry);
+    console.log(historyEntry);
     await handleClearTableOrders();
     await reloadHistory();
   };
@@ -375,6 +409,58 @@ export default function App() {
       isDangerous: false,
     });
   };
+
+  const loadOrders = async () => {
+    try {
+      const result = {};
+
+      for (const table of visibleTables) {
+
+        const order = await getOrdersForTable(table.id);
+           
+        result[table.id] = order && order.length > 0;
+      }
+
+      setOccupiedTables(result);
+    }
+    catch(error){ console.log(error); }
+    finally{}
+  };
+
+  const groupedHistory = historyEntries.reduce((acc, item) => {
+    const d = new Date(item.started_at);
+
+    const date =
+      `${String(d.getDate()).padStart(2, '0')}-` +
+      `${String(d.getMonth() + 1).padStart(2, '0')}-` +
+      `${d.getFullYear()}`;
+
+    if (!acc[date])
+       acc[date] = [];
+
+    acc[date].push(item);
+
+    return acc;
+  }, {});
+
+  const sections = Object.entries(groupedHistory)
+    .map(([title, data]) => ({
+      title,
+      data,
+    }))
+    .sort((a, b) => {
+      // newest date first
+      const parseDate = (str) => {
+        const [day, month, year] = str.split("-");
+        return new Date(`${year}-${month}-${day}`);
+      };
+
+      return parseDate(b.title) - parseDate(a.title);
+    });
+
+  useEffect(() => {
+    loadOrders();
+  }, [selectedFloor, selectedTable, orders]);
 
   const orderTotal = orders.reduce((total, order) => total + order.price * order.quantity, 0);
 
@@ -643,18 +729,23 @@ export default function App() {
               </Text>
             </TouchableOpacity>
             <TouchableOpacity style={[styles.actionButton, styles.outlineButton]} onPress={confirmClearAllTables}>
-              <Text style={[styles.actionButtonText, styles.outlineButtonText]}>Clear all</Text>
+              <Text style={[styles.actionButtonText, styles.outlineButtonText]}>Clear all tables</Text>
             </TouchableOpacity>
           </View>
         </View>
 
         {selectedView === 'history' ? (
           <View style={styles.historyContainer}>
-            <Text style={styles.sectionTitle}>Order History</Text>
+            <View style={styles.historyRowTitle}>
+              <Text style={styles.sectionTitle}>Order History</Text>
+              <TouchableOpacity style={[styles.actionButton, styles.outlineButton]} onPress={() => confirmClearHistory()}>
+                <Text style={[styles.actionButtonText, styles.outlineButtonText]} >Clear history</Text>
+              </TouchableOpacity>
+            </View>
             {historyEntries.length === 0 ? (
               <Text style={styles.emptyText}>No history yet.</Text>
             ) : (
-              <FlatList
+              /*<FlatList
                 data={historyEntries.slice().reverse()}
                 keyExtractor={item => String(item.id)}
                 renderItem={({ item }) => (
@@ -691,6 +782,79 @@ export default function App() {
                     ) : null}
                   </View>
                 )}
+              />*/
+              <SectionList
+                sections={sections}
+                keyExtractor={(item) => String(item.id)}
+                renderSectionHeader={({ section }) => (
+                  <TouchableOpacity onPress={() => toggleSection(section.title)} style={styles.sectionToggleRow}>
+                    <Text style={styles.sectionToggleText}>
+                      {section.title}
+                    </Text>
+
+                    <Text style={styles.dateHeaderIcon}>
+                      {collapsedSections.includes(section.title) ? "▼" : "▲"}
+                    </Text>
+                  </TouchableOpacity>
+                )}
+                renderItem={({ item, section }) => {
+
+                  if (collapsedSections.includes(section.title)) {
+                    return null;
+                  }
+
+                  return (
+                    <View style={styles.historyRow}>
+                      <View style={styles.historyHeader}>
+                        <Text style={styles.historyTitle}>
+                          {item.table_name}
+                        </Text>
+                      </View>
+
+                      <Text style={styles.historyMeta}>
+                        Started at: {formatDateTime(item.started_at)}
+                      </Text>
+
+                      <Text style={styles.historyMeta}>
+                        Finished at: {formatDateTime(item.finished_at)}
+                      </Text>
+
+                      <Text style={styles.historyMeta}>
+                        Total: {Number(item.total_price || 0).toFixed(2)} lei
+                      </Text>
+
+                      {item.order_note ? (
+                        <Text style={styles.historyNote}>
+                          {item.order_note}
+                        </Text>
+                      ) : null}
+
+
+                    <TouchableOpacity style={styles.historyToggleRow} onPress={() => toggleHistoryItems(item.id)}>
+                      <Text style={styles.historyToggleText}>
+                        {expandedHistoryIds.includes(item.id)
+                          ? `Hide ${item.items.length} item${item.items.length === 1 ? '' : 's'}`
+                          : `Show ${item.items.length} item${item.items.length === 1 ? '' : 's'}`}
+                      </Text>
+                      <Text style={styles.historyToggleIcon}>
+                        {expandedHistoryIds.includes(item.id) ? '▲' : '▼'}
+                      </Text>
+                    </TouchableOpacity>
+                    {expandedHistoryIds.includes(item.id) ? (
+                      <View style={styles.historyItemsContainer}>
+                        {item.items.map(sub => (
+                          <View key={`${item.id}-${sub.id}`} style={styles.historyItemRow}>
+                            <View style={styles.historyItemLabelRow}>
+                              <Text style={styles.historyItemTitle}>{sub.quantity}x {sub.name}</Text>
+                              <Text style={styles.historyItemPrice}>{(sub.price * sub.quantity).toFixed(2)} lei</Text>
+                            </View>
+                            {sub.note ? <Text style={styles.historyItemNote}>Note: {sub.note}</Text> : null}
+                          </View>
+                        ))}
+                      </View>
+                    ) : null}
+                  </View>
+              );}}
               />
             )}
           </View>
@@ -718,10 +882,18 @@ export default function App() {
               width: pos.width || 96 * SCALE,
               height: pos.height || 96 * SCALE,
             };
+
+            const occupiedStyles = { backgroundColor: '#F87171', borderColor: '#B91C1C', borderWidth: 2, borderRadius: 12 };
+
+            const occupied = occupiedTables[table.id] || false;
+
             const bgStyles = [
               styles.tableAbsoluteButton,
-              table.status === 'closed' && styles.tableClosed,
+              occupied && occupiedStyles,
+
+             // table.status === 'closed' && styles.tableClosed,
               { left: pos.left, top: pos.top },
+
               sizeStyle,
             ];
             return (
@@ -880,6 +1052,13 @@ const styles = StyleSheet.create({
   historyContainer: {
     flex: 1,
   },
+  historyRowTitle:{
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    gap: 110,
+    paddingBottom: 12,
+  },
+
   historyRow: {
     backgroundColor: '#FFFFFF',
     borderRadius: 20,
@@ -952,9 +1131,23 @@ const styles = StyleSheet.create({
     backgroundColor: '#F1F5F9',
     marginTop: 12,
   },
+  sectionToggleRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 15,
+    paddingHorizontal: 12,
+    borderRadius: 20,
+    backgroundColor: '#F1F5F9',
+    marginTop: 12,
+  },
   historyToggleText: {
     color: '#2563EB',
     fontWeight: '700',
+  },
+  sectionToggleText: {
+    fontWeight: '700',
+    fontSize: 17,
   },
   historyToggleIcon: {
     color: '#2563EB',
@@ -1048,6 +1241,9 @@ const styles = StyleSheet.create({
     borderRadius: 18,
     justifyContent: 'center',
     alignItems: 'center',
+
+//    backgroundColor: '#E0F2FE',
+
     backgroundColor: '#E0F2FE',
     padding: 14,
     shadowColor: '#00000020',

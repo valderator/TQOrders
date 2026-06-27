@@ -1970,3 +1970,596 @@
 {"_e":"metro:bundling:started","_t":1780347102525,"id":"3","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
 {"_e":"metro:bundling:progress","_t":1780347102525,"id":"3","progress":0,"total":1,"current":0}
 {"_e":"metro:bundling:done","_t":1780347102552,"id":"3","total":1,"ms":26.9477}
+{"_e":"root:init","_t":1780413227999,"format":"v0-jsonl","version":"56.1.13"}
+{"_e":"env:mode","_t":1780413228001,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1780413228007,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1780413228624,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1780413229442,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:instantiate","_t":1780413239186,"atlas":false,"workers":8,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1780413249478,"id":"1","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1780413249479,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1780413249485,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1780413249585,"id":"1","progress":0.026500811249323963,"total":129,"current":21}
+{"_e":"metro:bundling:progress","_t":1780413249685,"id":"1","progress":0.14903190914007572,"total":215,"current":83}
+{"_e":"metro:bundling:progress","_t":1780413249785,"id":"1","progress":0.30123695336239925,"total":348,"current":191}
+{"_e":"metro:bundling:progress","_t":1780413249885,"id":"1","progress":0.453561016243232,"total":441,"current":297}
+{"_e":"metro:bundling:progress","_t":1780413249985,"id":"1","progress":0.7064247807595319,"total":489,"current":411}
+{"_e":"metro:bundling:progress","_t":1780413250105,"id":"1","progress":0.8480640939704426,"total":531,"current":489}
+{"_e":"metro:bundling:progress","_t":1780413250205,"id":"1","progress":0.9431397928994083,"total":624,"current":606}
+{"_e":"metro:bundling:progress","_t":1780413250305,"id":"1","progress":0.9431397928994083,"total":682,"current":656}
+{"_e":"metro:bundling:done","_t":1780413250423,"id":"1","total":682,"ms":944.6536}
+{"_e":"metro:bundling:started","_t":1780413493486,"id":"2","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1780413493486,"id":"2","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1780413493531,"id":"2","total":1,"ms":44.6641}
+{"_e":"root:init","_t":1782561462280,"format":"v0-jsonl","version":"56.1.13"}
+{"_e":"env:mode","_t":1782561462283,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1782561462290,"mode":"development","files":[],"env":{}}
+{"_e":"root:init","_t":1782561470094,"format":"v0-jsonl","version":"56.1.13"}
+{"_e":"env:mode","_t":1782561470096,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1782561470102,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1782561470982,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1782561473025,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:instantiate","_t":1782561482503,"atlas":false,"workers":8,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1782561497462,"id":"1","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1782561497462,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782561497469,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782561497569,"id":"1","progress":0.002869897959183673,"total":112,"current":6}
+{"_e":"metro:bundling:progress","_t":1782561497670,"id":"1","progress":0.08803284627460452,"total":182,"current":54}
+{"_e":"metro:bundling:progress","_t":1782561497771,"id":"1","progress":0.2517093967314704,"total":293,"current":147}
+{"_e":"metro:bundling:progress","_t":1782561497871,"id":"1","progress":0.3400435476847148,"total":415,"current":242}
+{"_e":"metro:bundling:progress","_t":1782561497971,"id":"1","progress":0.560891709186023,"total":466,"current":349}
+{"_e":"metro:bundling:progress","_t":1782561498071,"id":"1","progress":0.7826796675217087,"total":503,"current":445}
+{"_e":"metro:bundling:progress","_t":1782561498179,"id":"1","progress":0.8445990757587043,"total":531,"current":488}
+{"_e":"metro:bundling:progress","_t":1782561498279,"id":"1","progress":0.9412854699355291,"total":604,"current":586}
+{"_e":"metro:bundling:progress","_t":1782561498382,"id":"1","progress":0.9412854699355291,"total":679,"current":649}
+{"_e":"metro:bundling:progress","_t":1782561498482,"id":"1","progress":0.999,"total":707,"current":707}
+{"_e":"metro:bundling:done","_t":1782561498557,"id":"1","total":707,"ms":1095.3025}
+{"_e":"metro:bundling:failed","_t":1782561747543,"id":null,"message":"SyntaxError: C:\\TQOrders\\TQOrders\\App.js: Unexpected token (752:11)\n\n  750 |               </TouchableOpacity>\n  751 |             );\n> 752 |           })}\n      |            ^\n  753 |         </View>\n  754 |           </>\n  755 |       )}","importStack":null,"filename":"App.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:failed","_t":1782561747745,"id":null,"message":"SyntaxError: C:\\TQOrders\\TQOrders\\App.js: Unexpected token (752:11)\n\n  750 |               </TouchableOpacity>\n  751 |             );\n> 752 |           })}\n      |            ^\n  753 |         </View>\n  754 |           </>\n  755 |       )}","importStack":null,"filename":"App.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:failed","_t":1782561747773,"id":null,"message":"SyntaxError: C:\\TQOrders\\TQOrders\\App.js: Unexpected token (752:11)\n\n  750 |               </TouchableOpacity>\n  751 |             );\n> 752 |           })}\n      |            ^\n  753 |         </View>\n  754 |           </>\n  755 |       )}","importStack":null,"filename":"App.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:failed","_t":1782561767164,"id":null,"message":"SyntaxError: C:\\TQOrders\\TQOrders\\App.js: Unexpected token (753:11)\n\n  751 |               </TouchableOpacity>\n  752 |             );\n> 753 |           })}\n      |            ^\n  754 |         </View>\n  755 |           </>\n  756 |       )}","importStack":null,"filename":"App.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:client_log","_t":1782561770060,"level":"error","data":["[TypeError: undefined is not a function]"]}
+{"_e":"metro:client_log","_t":1782561770112,"level":"error","data":["[TypeError: An error was thrown when attempting to render log messages via LogBox.\n\nundefined is not a function]"]}
+{"_e":"metro:bundling:started","_t":1782561858721,"id":"9","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1782561858721,"id":"9","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782561858722,"id":"9","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782561858828,"id":"9","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782561858879,"id":"9","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1782561858913,"id":"9","total":1,"ms":191.593}
+{"_e":"metro:client_log","_t":1782562000173,"level":"error","data":["[ReferenceError: Property 'ocupied' doesn't exist]"]}
+{"_e":"metro:bundling:started","_t":1782562024926,"id":"c","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1782562024926,"id":"c","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1782562024955,"id":"c","total":1,"ms":28.2511}
+{"_e":"metro:client_log","_t":1782562126843,"level":"error","data":["[ReferenceError: Property 'occupied' doesn't exist]"]}
+{"_e":"metro:client_log","_t":1782562666939,"level":"error","data":["[TypeError: Cannot read property 'length' of undefined]"]}
+{"_e":"metro:client_log","_t":1782562675000,"level":"error","data":["[TypeError: undefined is not a function]"]}
+{"_e":"metro:bundling:failed","_t":1782562738474,"id":null,"message":"SyntaxError: C:\\TQOrders\\TQOrders\\App.js: Unexpected reserved word 'await'. (725:26)\n\n  723 |             const occupied = orders.some(order => order.tableId === table.id && order.items.length > 0);\n  724 |\n> 725 |             const order = await getOrdersForTable(table.id);\n      |                           ^\n  726 |\n  727 |             //alert(order + \" \" + table.name + ' ' + selectedTable?.id + ' ' + table.id);\n  728 |","importStack":null,"filename":"App.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:failed","_t":1782562742285,"id":null,"message":"SyntaxError: C:\\TQOrders\\TQOrders\\App.js: Unexpected reserved word 'await'. (725:26)\n\n  723 |             const occupied = orders.some(order => order.tableId === table.id && order.items.length > 0);\n  724 |\n> 725 |             const order = await getOrdersForTable(table.id);\n      |                           ^\n  726 |\n  727 |             alert(order + \" \" + table.name + ' ' + selectedTable?.id + ' ' + table.id);\n  728 |","importStack":null,"filename":"App.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:failed","_t":1782562749458,"id":null,"message":"SyntaxError: C:\\TQOrders\\TQOrders\\App.js: Unexpected reserved word 'await'. (725:26)\n\n  723 |             const occupied = orders.some(order => order.tableId === table.id && order.items.length > 0);\n  724 |\n> 725 |             const order = await getOrdersForTable(table.id);\n      |                           ^\n  726 |\n  727 |             alert(order + \" \" + table.name + ' ' + selectedTable?.id + ' ' + table.id);\n  728 |","importStack":null,"filename":"App.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:client_log","_t":1782562750776,"level":"error","data":["[TypeError: undefined is not a function]"]}
+{"_e":"metro:client_log","_t":1782562750834,"level":"error","data":["[TypeError: An error was thrown when attempting to render log messages via LogBox.\n\nundefined is not a function]"]}
+{"_e":"metro:bundling:started","_t":1782562754524,"id":"p","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1782562754524,"id":"p","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782562754524,"id":"p","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1782562754544,"id":"p","message":"SyntaxError: C:\\TQOrders\\TQOrders\\App.js: Unexpected reserved word 'await'. (725:26)\n\n  723 |             const occupied = orders.some(order => order.tableId === table.id && order.items.length > 0);\n  724 |\n> 725 |             const order = await getOrdersForTable(table.id);\n      |                           ^\n  726 |\n  727 |             alert(order + \" \" + table.name + ' ' + selectedTable?.id + ' ' + table.id);\n  728 |","importStack":null,"filename":"App.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:started","_t":1782562837749,"id":"q","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1782562837749,"id":"q","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782562837749,"id":"q","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782562837905,"id":"q","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1782562837936,"id":"q","total":1,"ms":187.6077}
+{"_e":"metro:client_log","_t":1782562840132,"level":"error","data":["[Error: An unknown Component is an async Client Component. Only Server Components can be async at the moment. This error is often caused by accidentally adding `'use client'` to a module that was originally written for the server.]"]}
+{"_e":"metro:bundling:started","_t":1782562875187,"id":"t","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1782562875187,"id":"t","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782562875188,"id":"t","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782562875391,"id":"t","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1782562875427,"id":"t","total":1,"ms":239.5668}
+{"_e":"metro:client_log","_t":1782563178364,"level":"error","data":["[ReferenceError: Property 'occupied' doesn't exist]"]}
+{"_e":"metro:client_log","_t":1782563195108,"level":"log","data":["falseM1 undefined 1"]}
+{"_e":"metro:client_log","_t":1782563195206,"level":"log","data":["falseM2 undefined 2"]}
+{"_e":"metro:client_log","_t":1782563195206,"level":"log","data":["falseM3 undefined 3"]}
+{"_e":"metro:client_log","_t":1782563195206,"level":"log","data":["falseM4 undefined 4"]}
+{"_e":"metro:client_log","_t":1782563195206,"level":"log","data":["falseBAR undefined 5"]}
+{"_e":"metro:client_log","_t":1782563195206,"level":"log","data":["falseM5 undefined 6"]}
+{"_e":"metro:client_log","_t":1782563195206,"level":"log","data":["falseM6 undefined 7"]}
+{"_e":"metro:client_log","_t":1782563195206,"level":"log","data":["falseM7 undefined 8"]}
+{"_e":"metro:client_log","_t":1782563195206,"level":"log","data":["falseM8 undefined 9"]}
+{"_e":"metro:client_log","_t":1782563195206,"level":"log","data":["falseM9 undefined 10"]}
+{"_e":"metro:client_log","_t":1782563195206,"level":"log","data":["falseM10 undefined 11"]}
+{"_e":"metro:client_log","_t":1782563201628,"level":"log","data":["false M1 undefined 1"]}
+{"_e":"metro:client_log","_t":1782563201679,"level":"log","data":["false M2 undefined 2"]}
+{"_e":"metro:client_log","_t":1782563201679,"level":"log","data":["false M3 undefined 3"]}
+{"_e":"metro:client_log","_t":1782563201679,"level":"log","data":["false M4 undefined 4"]}
+{"_e":"metro:client_log","_t":1782563201679,"level":"log","data":["false BAR undefined 5"]}
+{"_e":"metro:client_log","_t":1782563201679,"level":"log","data":["false M5 undefined 6"]}
+{"_e":"metro:client_log","_t":1782563201679,"level":"log","data":["false M6 undefined 7"]}
+{"_e":"metro:client_log","_t":1782563201679,"level":"log","data":["false M7 undefined 8"]}
+{"_e":"metro:client_log","_t":1782563201679,"level":"log","data":["false M8 undefined 9"]}
+{"_e":"metro:client_log","_t":1782563201679,"level":"log","data":["false M9 undefined 10"]}
+{"_e":"metro:client_log","_t":1782563201679,"level":"log","data":["false M10 undefined 11"]}
+{"_e":"metro:client_log","_t":1782563201679,"level":"log","data":["false M1 undefined 1"]}
+{"_e":"metro:client_log","_t":1782563201679,"level":"log","data":["false M2 undefined 2"]}
+{"_e":"metro:client_log","_t":1782563201679,"level":"log","data":["false M3 undefined 3"]}
+{"_e":"metro:client_log","_t":1782563201680,"level":"log","data":["false M4 undefined 4"]}
+{"_e":"metro:client_log","_t":1782563201680,"level":"log","data":["false BAR undefined 5"]}
+{"_e":"metro:client_log","_t":1782563201680,"level":"log","data":["false M5 undefined 6"]}
+{"_e":"metro:client_log","_t":1782563201680,"level":"log","data":["false M6 undefined 7"]}
+{"_e":"metro:client_log","_t":1782563201680,"level":"log","data":["false M7 undefined 8"]}
+{"_e":"metro:client_log","_t":1782563201680,"level":"log","data":["false M8 undefined 9"]}
+{"_e":"metro:client_log","_t":1782563201680,"level":"log","data":["false M9 undefined 10"]}
+{"_e":"metro:client_log","_t":1782563201680,"level":"log","data":["false M10 undefined 11"]}
+{"_e":"metro:client_log","_t":1782563218530,"level":"log","data":["false M1 undefined 1"]}
+{"_e":"metro:client_log","_t":1782563218583,"level":"log","data":["false M2 undefined 2"]}
+{"_e":"metro:client_log","_t":1782563218583,"level":"log","data":["false M3 undefined 3"]}
+{"_e":"metro:client_log","_t":1782563218583,"level":"log","data":["false M4 undefined 4"]}
+{"_e":"metro:client_log","_t":1782563218583,"level":"log","data":["false BAR undefined 5"]}
+{"_e":"metro:client_log","_t":1782563218583,"level":"log","data":["false M5 undefined 6"]}
+{"_e":"metro:client_log","_t":1782563218583,"level":"log","data":["false M6 undefined 7"]}
+{"_e":"metro:client_log","_t":1782563218583,"level":"log","data":["false M7 undefined 8"]}
+{"_e":"metro:client_log","_t":1782563218583,"level":"log","data":["false M8 undefined 9"]}
+{"_e":"metro:client_log","_t":1782563218583,"level":"log","data":["false M9 undefined 10"]}
+{"_e":"metro:client_log","_t":1782563218583,"level":"log","data":["false M10 undefined 11"]}
+{"_e":"metro:client_log","_t":1782563218583,"level":"log","data":["false M1 undefined 1"]}
+{"_e":"metro:client_log","_t":1782563218583,"level":"log","data":["false M2 undefined 2"]}
+{"_e":"metro:client_log","_t":1782563218583,"level":"log","data":["false M3 undefined 3"]}
+{"_e":"metro:client_log","_t":1782563218583,"level":"log","data":["false M4 undefined 4"]}
+{"_e":"metro:client_log","_t":1782563218583,"level":"log","data":["false BAR undefined 5"]}
+{"_e":"metro:client_log","_t":1782563218583,"level":"log","data":["false M5 undefined 6"]}
+{"_e":"metro:client_log","_t":1782563218583,"level":"log","data":["false M6 undefined 7"]}
+{"_e":"metro:client_log","_t":1782563218583,"level":"log","data":["false M7 undefined 8"]}
+{"_e":"metro:client_log","_t":1782563218583,"level":"log","data":["false M8 undefined 9"]}
+{"_e":"metro:client_log","_t":1782563218584,"level":"log","data":["false M9 undefined 10"]}
+{"_e":"metro:client_log","_t":1782563218584,"level":"log","data":["false M10 undefined 11"]}
+{"_e":"metro:bundling:failed","_t":1782563260876,"id":"p","message":"SyntaxError: C:\\TQOrders\\TQOrders\\App.js: Missing semicolon. (726:123)\n\n  724 |\n  725 |             // and then create an exact copy of the style used for a normal table but add a redish background color to it if the table is occupied\n> 726 |             const occupiedStyles = { backgroundColor: '#F87171', borderColor: '#B91C1C', borderWidth: 2, borderRadius: 12 } : {};\n      |                                                                                                                            ^\n  727 |\n  728 |\n  729 |","importStack":null,"filename":"App.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:client_log","_t":1782563368665,"level":"error","data":["[Error: Uncaught (in promise, id: 0): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782563496376,"level":"error","data":["[TypeError: \"occupied\" is read-only]"]}
+{"_e":"metro:client_log","_t":1782563524816,"level":"log","data":["{}"]}
+{"_e":"metro:client_log","_t":1782563524869,"level":"log","data":["{}"]}
+{"_e":"metro:client_log","_t":1782563524869,"level":"log","data":["{}"]}
+{"_e":"metro:client_log","_t":1782563524869,"level":"log","data":["{}"]}
+{"_e":"metro:client_log","_t":1782563524869,"level":"log","data":["{}"]}
+{"_e":"metro:client_log","_t":1782563524869,"level":"log","data":["{}"]}
+{"_e":"metro:client_log","_t":1782563524869,"level":"log","data":["{}"]}
+{"_e":"metro:client_log","_t":1782563524869,"level":"log","data":["{}"]}
+{"_e":"metro:client_log","_t":1782563524869,"level":"log","data":["{}"]}
+{"_e":"metro:client_log","_t":1782563524870,"level":"log","data":["{}"]}
+{"_e":"metro:client_log","_t":1782563524870,"level":"log","data":["{}"]}
+{"_e":"metro:client_log","_t":1782563524917,"level":"error","data":["[Error: Uncaught (in promise, id: 1): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782563596623,"level":"log","data":["[{\"id\": 1, \"name\": \"Sandwich\", \"note\": \"\", \"price\": 5.5, \"quantity\": 1}]"]}
+{"_e":"metro:client_log","_t":1782563596668,"level":"log","data":["[{\"id\": 2, \"name\": \"Sandwich\", \"note\": \"\", \"price\": 5.5, \"quantity\": 1}, {\"id\": 3, \"name\": \"Bagel\", \"note\": \"\", \"price\": 3, \"quantity\": 1}]"]}
+{"_e":"metro:client_log","_t":1782563596668,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563596668,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563596668,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563596668,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563596669,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563596669,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563596669,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563596669,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563596669,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563598435,"level":"log","data":["[{\"id\": 1, \"name\": \"Sandwich\", \"note\": \"\", \"price\": 5.5, \"quantity\": 1}]"]}
+{"_e":"metro:client_log","_t":1782563598486,"level":"log","data":["[{\"id\": 2, \"name\": \"Sandwich\", \"note\": \"\", \"price\": 5.5, \"quantity\": 1}, {\"id\": 3, \"name\": \"Bagel\", \"note\": \"\", \"price\": 3, \"quantity\": 1}]"]}
+{"_e":"metro:client_log","_t":1782563598486,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563598486,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563598486,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563598486,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563598486,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563598486,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563598486,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563598486,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563598486,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563615062,"level":"log","data":["[{\"id\": 1, \"name\": \"Sandwich\", \"note\": \"\", \"price\": 5.5, \"quantity\": 1}]"]}
+{"_e":"metro:client_log","_t":1782563615112,"level":"log","data":["[{\"id\": 2, \"name\": \"Sandwich\", \"note\": \"\", \"price\": 5.5, \"quantity\": 1}, {\"id\": 3, \"name\": \"Bagel\", \"note\": \"\", \"price\": 3, \"quantity\": 1}]"]}
+{"_e":"metro:client_log","_t":1782563615112,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563615112,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563615112,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563615112,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563615112,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563615112,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563615112,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563615112,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563615112,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563665155,"level":"log","data":["[{\"id\": 1, \"name\": \"Sandwich\", \"note\": \"\", \"price\": 5.5, \"quantity\": 1}]"]}
+{"_e":"metro:client_log","_t":1782563665203,"level":"log","data":["[{\"id\": 2, \"name\": \"Sandwich\", \"note\": \"\", \"price\": 5.5, \"quantity\": 1}, {\"id\": 3, \"name\": \"Bagel\", \"note\": \"\", \"price\": 3, \"quantity\": 1}]"]}
+{"_e":"metro:client_log","_t":1782563665203,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563665203,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563665203,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563665203,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563665203,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563665203,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563665203,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563665203,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563665203,"level":"log","data":["[]"]}
+{"_e":"metro:client_log","_t":1782563691504,"level":"log","data":["[object Object] for table 1"]}
+{"_e":"metro:client_log","_t":1782563691577,"level":"log","data":["[object Object],[object Object] for table 2"]}
+{"_e":"metro:client_log","_t":1782563691577,"level":"log","data":[" for table 3"]}
+{"_e":"metro:client_log","_t":1782563691577,"level":"log","data":[" for table 4"]}
+{"_e":"metro:client_log","_t":1782563691577,"level":"log","data":[" for table 5"]}
+{"_e":"metro:client_log","_t":1782563691577,"level":"log","data":[" for table 6"]}
+{"_e":"metro:client_log","_t":1782563691577,"level":"log","data":[" for table 7"]}
+{"_e":"metro:client_log","_t":1782563691577,"level":"log","data":[" for table 8"]}
+{"_e":"metro:client_log","_t":1782563691577,"level":"log","data":[" for table 9"]}
+{"_e":"metro:client_log","_t":1782563691577,"level":"log","data":[" for table 10"]}
+{"_e":"metro:client_log","_t":1782563691577,"level":"log","data":[" for table 11"]}
+{"_e":"metro:client_log","_t":1782563717657,"level":"log","data":["Table M1 has 1 order items."]}
+{"_e":"metro:client_log","_t":1782563717706,"level":"log","data":["Table M2 has 2 order items."]}
+{"_e":"metro:client_log","_t":1782563724631,"level":"log","data":["Table M1 has 1 order items."]}
+{"_e":"metro:client_log","_t":1782563724678,"level":"log","data":["Table M2 has 2 order items."]}
+{"_e":"metro:client_log","_t":1782563741387,"level":"log","data":["Table M1 has 1 order items."]}
+{"_e":"metro:client_log","_t":1782563741441,"level":"log","data":["Table M2 has 2 order items."]}
+{"_e":"metro:client_log","_t":1782563741519,"level":"error","data":["[Error: Uncaught (in promise, id: 2): \"ReferenceError: Property 'results' doesn't exist\"]"]}
+{"_e":"metro:client_log","_t":1782563743478,"level":"log","data":["Table M1 has 1 order items."]}
+{"_e":"metro:client_log","_t":1782563743568,"level":"log","data":["Table M2 has 2 order items."]}
+{"_e":"metro:client_log","_t":1782563743569,"level":"log","data":["{\"1\": undefined, \"10\": undefined, \"11\": undefined, \"2\": undefined, \"3\": undefined, \"4\": undefined, \"5\": undefined, \"6\": undefined, \"7\": undefined, \"8\": undefined, \"9\": undefined}"]}
+{"_e":"metro:client_log","_t":1782563764898,"level":"log","data":["{\"1\": undefined, \"10\": undefined, \"11\": undefined, \"2\": undefined, \"3\": undefined, \"4\": undefined, \"5\": undefined, \"6\": undefined, \"7\": undefined, \"8\": undefined, \"9\": undefined}"]}
+{"_e":"metro:client_log","_t":1782563781423,"level":"log","data":["{\"12\": undefined, \"13\": undefined, \"14\": undefined, \"15\": undefined, \"16\": undefined, \"17\": undefined}"]}
+{"_e":"metro:client_log","_t":1782563803371,"level":"log","data":["Table T1 has 1 order items."]}
+{"_e":"metro:client_log","_t":1782563803419,"level":"log","data":["{\"12\": true, \"13\": false, \"14\": false, \"15\": false, \"16\": false, \"17\": false}"]}
+{"_e":"metro:client_log","_t":1782563820678,"level":"log","data":["{\"1\": true, \"10\": false, \"11\": false, \"2\": true, \"3\": false, \"4\": false, \"5\": false, \"6\": false, \"7\": false, \"8\": false, \"9\": false}"]}
+{"_e":"metro:client_log","_t":1782563992501,"level":"error","data":["[Error: Uncaught (in promise, id: 3): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782563992559,"level":"error","data":["[Error: Uncaught (in promise, id: 4): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564019144,"level":"error","data":["[Error: Uncaught (in promise, id: 5): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564022422,"level":"error","data":["[Error: Uncaught (in promise, id: 6): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564027524,"level":"error","data":["[Error: Uncaught (in promise, id: 7): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564118924,"level":"error","data":["[Error: Uncaught (in promise, id: 8): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564121835,"level":"error","data":["[Error: Uncaught (in promise, id: 9): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:bundling:started","_t":1782564128076,"id":"1c","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1782564128076,"id":"1c","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1782564128110,"id":"1c","total":1,"ms":33.9269}
+{"_e":"metro:client_log","_t":1782564128886,"level":"error","data":["[Error: Uncaught (in promise, id: 0): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564163586,"level":"error","data":["[ReferenceError: Property 'occupied' doesn't exist]"]}
+{"_e":"metro:client_log","_t":1782564167828,"level":"error","data":["[Error: Uncaught (in promise, id: 1): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564217098,"level":"error","data":["[Error: Uncaught (in promise, id: 2): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564233943,"level":"error","data":["[Error: Uncaught (in promise, id: 3): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564238139,"level":"error","data":["[Error: Uncaught (in promise, id: 4): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564245490,"level":"error","data":["[Error: Uncaught (in promise, id: 5): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564247693,"level":"error","data":["[Error: Uncaught (in promise, id: 6): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564258516,"level":"error","data":["[Error: Uncaught (in promise, id: 7): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564261078,"level":"error","data":["[Error: Uncaught (in promise, id: 8): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564264407,"level":"error","data":["[Error: Uncaught (in promise, id: 9): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564266151,"level":"error","data":["[Error: Uncaught (in promise, id: 10): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564270054,"level":"error","data":["[Error: Uncaught (in promise, id: 11): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564272273,"level":"error","data":["[Error: Uncaught (in promise, id: 12): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564321739,"level":"error","data":["[Error: Uncaught (in promise, id: 13): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564321797,"level":"error","data":["[Error: Uncaught (in promise, id: 14): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564323523,"level":"error","data":["[Error: Uncaught (in promise, id: 15): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564327742,"level":"error","data":["[Error: Uncaught (in promise, id: 16): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564327795,"level":"error","data":["[Error: Uncaught (in promise, id: 17): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564331032,"level":"error","data":["[Error: Uncaught (in promise, id: 18): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564331093,"level":"error","data":["[Error: Uncaught (in promise, id: 19): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564332097,"level":"error","data":["[Error: Uncaught (in promise, id: 20): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564332917,"level":"error","data":["[Error: Uncaught (in promise, id: 21): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564332972,"level":"error","data":["[Error: Uncaught (in promise, id: 22): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564334424,"level":"error","data":["[Error: Uncaught (in promise, id: 23): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564335830,"level":"error","data":["[Error: Uncaught (in promise, id: 24): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564335891,"level":"error","data":["[Error: Uncaught (in promise, id: 25): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564336886,"level":"error","data":["[Error: Uncaught (in promise, id: 26): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564343745,"level":"error","data":["[Error: Uncaught (in promise, id: 27): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564343806,"level":"error","data":["[Error: Uncaught (in promise, id: 28): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564345143,"level":"error","data":["[Error: Uncaught (in promise, id: 29): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564346064,"level":"error","data":["[Error: Uncaught (in promise, id: 30): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564346124,"level":"error","data":["[Error: Uncaught (in promise, id: 31): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564347424,"level":"error","data":["[Error: Uncaught (in promise, id: 32): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564348678,"level":"error","data":["[Error: Uncaught (in promise, id: 33): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564348737,"level":"error","data":["[Error: Uncaught (in promise, id: 34): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564349651,"level":"error","data":["[Error: Uncaught (in promise, id: 35): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564351653,"level":"error","data":["[Error: Uncaught (in promise, id: 36): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564351707,"level":"error","data":["[Error: Uncaught (in promise, id: 37): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564352764,"level":"error","data":["[Error: Uncaught (in promise, id: 38): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564352822,"level":"error","data":["[Error: Uncaught (in promise, id: 39): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564358935,"level":"error","data":["[Error: Uncaught (in promise, id: 40): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564358982,"level":"error","data":["[Error: Uncaught (in promise, id: 41): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564359923,"level":"error","data":["[Error: Uncaught (in promise, id: 42): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564361851,"level":"error","data":["[Error: Uncaught (in promise, id: 43): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564361925,"level":"error","data":["[Error: Uncaught (in promise, id: 44): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564363052,"level":"error","data":["[Error: Uncaught (in promise, id: 45): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564376318,"level":"error","data":["[Error: Uncaught (in promise, id: 46): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564376368,"level":"error","data":["[Error: Uncaught (in promise, id: 47): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564377802,"level":"error","data":["[Error: Uncaught (in promise, id: 48): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564380459,"level":"error","data":["[Error: Uncaught (in promise, id: 49): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564380527,"level":"error","data":["[Error: Uncaught (in promise, id: 50): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564381923,"level":"error","data":["[Error: Uncaught (in promise, id: 51): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564381984,"level":"error","data":["[Error: Uncaught (in promise, id: 52): \"TypeError: Cannot convert undefined value to object\"]"]}
+{"_e":"metro:client_log","_t":1782564561468,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782564561532,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782564585274,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782564591478,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782564591527,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782564602181,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782564602229,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:bundling:failed","_t":1782564662651,"id":"p","message":"SyntaxError: C:\\TQOrders\\TQOrders\\App.js: Lexical declaration cannot appear in a single-statement context. (405:12)\n\n  403 |         for (const table of visibleTables) {\n  404 |           if (table != null)\n> 405 |             const order = await getOrdersForTable(table.id);\n      |             ^\n  406 |\n  407 |         result[table.id] = order && order.length > 0;\n  408 |       }","importStack":null,"filename":"App.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:client_log","_t":1782564664303,"level":"error","data":["[TypeError: undefined is not a function]"]}
+{"_e":"metro:client_log","_t":1782564664357,"level":"error","data":["[TypeError: An error was thrown when attempting to render log messages via LogBox.\n\nundefined is not a function]"]}
+{"_e":"metro:bundling:started","_t":1782564699691,"id":"31","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1782564699691,"id":"31","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782564699692,"id":"31","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782564699829,"id":"31","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1782564699863,"id":"31","total":1,"ms":171.7991}
+{"_e":"metro:client_log","_t":1782564700593,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782564702484,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782564702549,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782564717633,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782564720186,"level":"log","data":["{\"floor\": \"Salon\", \"id\": 1, \"name\": \"M1\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}"]}
+{"_e":"metro:client_log","_t":1782564720247,"level":"log","data":["[ReferenceError: Property 'order' doesn't exist]"]}
+{"_e":"metro:client_log","_t":1782564738191,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782564738244,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782564740738,"level":"log","data":["{\"floor\": \"Salon\", \"id\": 1, \"name\": \"M1\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}"]}
+{"_e":"metro:client_log","_t":1782564740793,"level":"log","data":["[ReferenceError: Property 'order' doesn't exist]"]}
+{"_e":"metro:client_log","_t":1782564742000,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782564742080,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782564780026,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782564781643,"level":"log","data":["{\"floor\": \"Salon\", \"id\": 1, \"name\": \"M1\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}"]}
+{"_e":"metro:client_log","_t":1782564781688,"level":"log","data":["[ReferenceError: Property 'order' doesn't exist]"]}
+{"_e":"metro:client_log","_t":1782564784769,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782564784833,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782564799726,"level":"log","data":["undefined"]}
+{"_e":"metro:client_log","_t":1782564799831,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782564801280,"level":"log","data":["[{\"floor\": \"Salon\", \"id\": 1, \"name\": \"M1\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}, {\"floor\": \"Salon\", \"id\": 2, \"name\": \"M2\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}, {\"floor\": \"Salon\", \"id\": 3, \"name\": \"M3\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}, {\"floor\": \"Salon\", \"id\": 4, \"name\": \"M4\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}, {\"floor\": \"Salon\", \"id\": 5, \"name\": \"BAR\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}, {\"floor\": \"Salon\", \"id\": 6, \"name\": \"M5\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}, {\"floor\": \"Salon\", \"id\": 7, \"name\": \"M6\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}, {\"floor\": \"Salon\", \"id\": 8, \"name\": \"M7\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}, {\"floor\": \"Salon\", \"id\": 9, \"name\": \"M8\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}, {\"floor\": \"Salon\", \"id\": 10, \"name\": \"M9\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}, {\"floor\": \"Salon\", \"id\": 11, \"name\": \"M10\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}]"]}
+{"_e":"metro:client_log","_t":1782564801330,"level":"log","data":["{\"floor\": \"Salon\", \"id\": 1, \"name\": \"M1\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}"]}
+{"_e":"metro:client_log","_t":1782564801330,"level":"log","data":["[ReferenceError: Property 'order' doesn't exist]"]}
+{"_e":"metro:client_log","_t":1782564802778,"level":"log","data":["undefined"]}
+{"_e":"metro:client_log","_t":1782564802833,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782564802834,"level":"log","data":["undefined"]}
+{"_e":"metro:client_log","_t":1782564802834,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782564847684,"level":"log","data":["undefined"]}
+{"_e":"metro:client_log","_t":1782564847788,"level":"log","data":["{\"floor\": \"Salon\", \"id\": 1, \"name\": \"M1\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}"]}
+{"_e":"metro:client_log","_t":1782564847788,"level":"log","data":["[ReferenceError: Property 'order' doesn't exist]"]}
+{"_e":"metro:client_log","_t":1782564850105,"level":"log","data":["[{\"floor\": \"Salon\", \"id\": 1, \"name\": \"M1\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}, {\"floor\": \"Salon\", \"id\": 2, \"name\": \"M2\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}, {\"floor\": \"Salon\", \"id\": 3, \"name\": \"M3\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}, {\"floor\": \"Salon\", \"id\": 4, \"name\": \"M4\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}, {\"floor\": \"Salon\", \"id\": 5, \"name\": \"BAR\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}, {\"floor\": \"Salon\", \"id\": 6, \"name\": \"M5\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}, {\"floor\": \"Salon\", \"id\": 7, \"name\": \"M6\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}, {\"floor\": \"Salon\", \"id\": 8, \"name\": \"M7\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}, {\"floor\": \"Salon\", \"id\": 9, \"name\": \"M8\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}, {\"floor\": \"Salon\", \"id\": 10, \"name\": \"M9\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}, {\"floor\": \"Salon\", \"id\": 11, \"name\": \"M10\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}]"]}
+{"_e":"metro:client_log","_t":1782564850161,"level":"log","data":["{\"floor\": \"Salon\", \"id\": 1, \"name\": \"M1\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}"]}
+{"_e":"metro:client_log","_t":1782564850161,"level":"log","data":["[ReferenceError: Property 'order' doesn't exist]"]}
+{"_e":"metro:client_log","_t":1782564853454,"level":"log","data":["undefined"]}
+{"_e":"metro:client_log","_t":1782564853510,"level":"log","data":["{\"floor\": \"Salon\", \"id\": 1, \"name\": \"M1\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}"]}
+{"_e":"metro:client_log","_t":1782564853510,"level":"log","data":["[ReferenceError: Property 'order' doesn't exist]"]}
+{"_e":"metro:client_log","_t":1782564853510,"level":"log","data":["undefined"]}
+{"_e":"metro:client_log","_t":1782564853510,"level":"log","data":["{\"floor\": \"Salon\", \"id\": 1, \"name\": \"M1\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}"]}
+{"_e":"metro:client_log","_t":1782564853510,"level":"log","data":["[ReferenceError: Property 'order' doesn't exist]"]}
+{"_e":"metro:client_log","_t":1782564931968,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782564971052,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782564984853,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782564986309,"level":"log","data":["{\"floor\": \"Salon\", \"id\": 1, \"name\": \"M1\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}"]}
+{"_e":"metro:client_log","_t":1782564986343,"level":"log","data":["{\"floor\": \"Salon\", \"id\": 2, \"name\": \"M2\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}"]}
+{"_e":"metro:client_log","_t":1782564986343,"level":"log","data":["{\"floor\": \"Salon\", \"id\": 3, \"name\": \"M3\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}"]}
+{"_e":"metro:client_log","_t":1782564986343,"level":"log","data":["{\"floor\": \"Salon\", \"id\": 4, \"name\": \"M4\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}"]}
+{"_e":"metro:client_log","_t":1782564986343,"level":"log","data":["{\"floor\": \"Salon\", \"id\": 5, \"name\": \"BAR\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}"]}
+{"_e":"metro:client_log","_t":1782564986343,"level":"log","data":["{\"floor\": \"Salon\", \"id\": 6, \"name\": \"M5\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}"]}
+{"_e":"metro:client_log","_t":1782564986343,"level":"log","data":["{\"floor\": \"Salon\", \"id\": 7, \"name\": \"M6\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}"]}
+{"_e":"metro:client_log","_t":1782564986343,"level":"log","data":["{\"floor\": \"Salon\", \"id\": 8, \"name\": \"M7\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}"]}
+{"_e":"metro:client_log","_t":1782564986343,"level":"log","data":["{\"floor\": \"Salon\", \"id\": 9, \"name\": \"M8\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}"]}
+{"_e":"metro:client_log","_t":1782564986348,"level":"log","data":["{\"floor\": \"Salon\", \"id\": 10, \"name\": \"M9\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}"]}
+{"_e":"metro:client_log","_t":1782564986348,"level":"log","data":["{\"floor\": \"Salon\", \"id\": 11, \"name\": \"M10\", \"note\": \"\", \"order_started_at\": null, \"status\": \"open\"}"]}
+{"_e":"metro:client_log","_t":1782564989107,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782564989171,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:bundling:failed","_t":1782565127989,"id":"p","message":"SyntaxError: C:\\TQOrders\\TQOrders\\App.js: Missing catch or finally clause. (400:6)\n\n  398 |\n  399 |     async function loadOrders() {\n> 400 |       try {\n      |       ^\n  401 |\n  402 |         const result = {};\n  403 |","importStack":null,"filename":"App.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:failed","_t":1782565132117,"id":"p","message":"SyntaxError: C:\\TQOrders\\TQOrders\\App.js: Missing catch or finally clause. (400:6)\n\n  398 |\n  399 |     async function loadOrders() {\n> 400 |       try {\n      |       ^\n  401 |\n  402 |         const result = {};\n  403 |","importStack":null,"filename":"App.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:failed","_t":1782565132275,"id":"p","message":"SyntaxError: C:\\TQOrders\\TQOrders\\App.js: Missing catch or finally clause. (400:6)\n\n  398 |\n  399 |     async function loadOrders() {\n> 400 |       try {\n      |       ^\n  401 |\n  402 |         const result = {};\n  403 |","importStack":null,"filename":"App.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:client_log","_t":1782565134530,"level":"log","data":["[TypeError: Cannot read property 'length' of undefined]"]}
+{"_e":"metro:client_log","_t":1782565146795,"level":"log","data":["[TypeError: Cannot read property 'length' of undefined]"]}
+{"_e":"metro:client_log","_t":1782565146845,"level":"log","data":["[TypeError: Cannot read property 'length' of undefined]"]}
+{"_e":"metro:client_log","_t":1782565163038,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565174586,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565177045,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565177094,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565224226,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565227030,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565227091,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:bundling:failed","_t":1782565262166,"id":"p","message":"SyntaxError: C:\\TQOrders\\TQOrders\\App.js: Identifier 'loadOrders' has already been declared. (386:19)\n\n  384 |     }, []);\n  385 |\n> 386 |     async function loadOrders() {\n      |                    ^\n  387 |       \n  388 |       try {\n  389 |","importStack":null,"filename":"App.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:failed","_t":1782565313950,"id":"p","message":"SyntaxError: C:\\TQOrders\\TQOrders\\App.js: Identifier 'loadOrders' has already been declared. (408:19)\n\n  406 |     }, []);\n  407 |\n> 408 |     async function loadOrders() {\n      |                    ^\n  409 |       \n  410 |       \n  411 |     }","importStack":null,"filename":"App.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:client_log","_t":1782565465442,"level":"error","data":["[TypeError: undefined is not a function]"]}
+{"_e":"metro:client_log","_t":1782565502527,"level":"error","data":["[TypeError: undefined is not a function]"]}
+{"_e":"metro:client_log","_t":1782565537397,"level":"error","data":["[TypeError: undefined is not a function]"]}
+{"_e":"metro:client_log","_t":1782565587576,"level":"error","data":["[ReferenceError: Property 'useFocusEffect' doesn't exist]"]}
+{"_e":"metro:client_log","_t":1782565594783,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565598952,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565599009,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565600084,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565602086,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565603178,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:bundling:failed","_t":1782565644145,"id":"p","message":"SyntaxError: C:\\TQOrders\\TQOrders\\App.js: Unexpected token (401:6)\n\n  399 |         setOccupiedTables(result);\n  400 |       }\n> 401 |       catch(error){ console.log(error); }\n      |       ^\n  402 |       finally{}\n  403 |     }, []);\n  404 |","importStack":null,"filename":"App.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:client_log","_t":1782565732951,"level":"error","data":["[TypeError: Object is not a function]"]}
+{"_e":"metro:client_log","_t":1782565770612,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565780718,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565780759,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565782638,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565784119,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565784181,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565786331,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565786381,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565788005,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565790724,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565790789,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565791798,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565793498,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565793545,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565797270,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565801775,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565801825,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565803273,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565887819,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565887879,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782565889000,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:bundling:started","_t":1782566037698,"id":"3e","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1782566037698,"id":"3e","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782566037698,"id":"3e","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782566037798,"id":"3e","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782566037818,"id":"3e","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782566037918,"id":"3e","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782566038018,"id":"3e","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782566038125,"id":"3e","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782566038239,"id":"3e","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782566038359,"id":"3e","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1782566038417,"id":"3e","total":1,"ms":719.2542}
+{"_e":"metro:client_log","_t":1782566039275,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782566176006,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782566176063,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:bundling:failed","_t":1782566574269,"id":"p","message":"SyntaxError: C:\\TQOrders\\TQOrders\\App.js: Unexpected token (50:30)\n\n  48 |   7: { left: SCREEN_WIDTH * 0.06, top: 392 * SCALE, width: 92 * SCALE, height: 92 * SCALE },\n  49 |   8: { left: SCREEN_WIDTH * 0.06, top: 392 * SCALE, width: 92 * SCALE, height: 92 * SCALE },\n> 50 |   9: { left: SCREEN_WIDTH * 0,, top: 392 * SCALE, width: 92 * SCALE, height: 92 * SCALE },\n     |                               ^\n  51 |   10: { left: SCREEN_WIDTH * 0.62, top: 452 * SCALE, width: 96 * SCALE, height: 96 * SCALE },\n  52 |   11: { left: SCREEN_WIDTH * 0.74, top: 452 * SCALE, width: 96 * SCALE, height: 96 * SCALE },\n  53 | };","importStack":null,"filename":"App.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:failed","_t":1782566575861,"id":"p","message":"SyntaxError: C:\\TQOrders\\TQOrders\\App.js: Legacy octal literals are not allowed in strict mode. (50:30)\n\n  48 |   7: { left: SCREEN_WIDTH * 0.06, top: 392 * SCALE, width: 92 * SCALE, height: 92 * SCALE },\n  49 |   8: { left: SCREEN_WIDTH * 0.06, top: 392 * SCALE, width: 92 * SCALE, height: 92 * SCALE },\n> 50 |   9: { left: SCREEN_WIDTH * 0,06, top: 392 * SCALE, width: 92 * SCALE, height: 92 * SCALE },\n     |                               ^\n  51 |   10: { left: SCREEN_WIDTH * 0.62, top: 452 * SCALE, width: 96 * SCALE, height: 96 * SCALE },\n  52 |   11: { left: SCREEN_WIDTH * 0.74, top: 452 * SCALE, width: 96 * SCALE, height: 96 * SCALE },\n  53 | };","importStack":null,"filename":"App.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:started","_t":1782566859296,"id":"3h","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1782566859296,"id":"3h","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1782566859330,"id":"3h","total":1,"ms":34.0927}
+{"_e":"metro:client_log","_t":1782566860084,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782566892599,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782566892652,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782566894805,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782566894852,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782566896285,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782566896366,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567065767,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567065827,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567633436,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567633492,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567635035,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567635090,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567636535,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567638282,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567638344,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567639323,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567640753,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567640838,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567641745,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567646757,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567646807,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567648041,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567649959,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567650032,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567653071,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567653138,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567654891,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567654949,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567656744,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567656798,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567658163,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567658215,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567668364,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567668419,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567691812,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567691872,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567694314,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567694371,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567695736,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567695796,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567697012,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567698938,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567699054,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567700078,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782567700138,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:bundling:failed","_t":1782567775486,"id":"p","message":"SyntaxError: C:\\TQOrders\\TQOrders\\db.js: Unexpected token, expected \"{\" (230:7)\n\n  228 | }\n  229 |\n> 230 | export async functiton clearHistory(){\n      |        ^\n  231 |   \n  232 | }\n  233 |","importStack":null,"filename":"db.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:failed","_t":1782567782242,"id":"p","message":"SyntaxError: C:\\TQOrders\\TQOrders\\db.js: Unexpected token, expected \"{\" (230:7)\n\n  228 | }\n  229 |\n> 230 | export async functiton clearHistory(){\n      |        ^\n  231 |   \n  232 | }\n  233 |","importStack":null,"filename":"db.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:failed","_t":1782568079091,"id":"p","message":"SyntaxError: C:\\TQOrders\\TQOrders\\App.js: Unexpected token, expected \",\" (676:44)\n\n  674 |           <View style={styles.historyContainer}>\n  675 |             <Text style={styles.sectionTitle}>Order History</Text>\n> 676 |             <TouchableOpacity style={{styles.actionButton}} onPress={() => alert(\"you sure?\")}>\n      |                                             ^\n  677 |               <Text>Clear history</Text>\n  678 |             </TouchableOpacity>\n  679 |             {historyEntries.length === 0 ? (","importStack":null,"filename":"App.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:client_log","_t":1782568081923,"level":"error","data":["[TypeError: undefined is not a function]"]}
+{"_e":"metro:client_log","_t":1782568081984,"level":"error","data":["[TypeError: An error was thrown when attempting to render log messages via LogBox.\n\nundefined is not a function]"]}
+{"_e":"metro:bundling:started","_t":1782568096114,"id":"3n","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1782568096114,"id":"3n","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782568096115,"id":"3n","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782568096298,"id":"3n","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1782568096333,"id":"3n","total":1,"ms":219.0341}
+{"_e":"metro:client_log","_t":1782568097226,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:bundling:failed","_t":1782568232904,"id":"p","message":"SyntaxError: C:\\TQOrders\\TQOrders\\App.js: Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fragment <>...</>? (680:10)\n\n  678 |               </TouchableOpacity>\n  679 |             </View>\n> 680 |           <View style={styles.historyContainer}>\n      |           ^\n  681 |             {historyEntries.length === 0 ? (\n  682 |               <Text style={styles.emptyText}>No history yet.</Text>\n  683 |             ) : (","importStack":null,"filename":"App.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:client_log","_t":1782568326967,"level":"error","data":["[ReferenceError: Property 'actionButtonText' doesn't exist]"]}
+{"_e":"metro:client_log","_t":1782568331845,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:bundling:failed","_t":1782568359307,"id":"p","message":"SyntaxError: C:\\TQOrders\\TQOrders\\App.js: JSX attributes must only be assigned a non-empty expression. (678:28)\n\n  676 |               <Text style={styles.sectionTitle}>Order History</Text>\n  677 |               <TouchableOpacity style={styles.actionButton} onPress={() => alert(\"you sure?\")}>\n> 678 |                 <Text style={}>Clear history</Text>\n      |                             ^\n  679 |               </TouchableOpacity>\n  680 |             </View>\n  681 |             {historyEntries.length === 0 ? (","importStack":null,"filename":"App.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:client_log","_t":1782569012400,"level":"error","data":["[Error: Uncaught (in promise, id: 0): \"ReferenceError: Property 'clearHistory' doesn't exist\"]"]}
+{"_e":"metro:client_log","_t":1782569046332,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782569046418,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782569048006,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782569049553,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782569049623,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782569050991,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782569051058,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782569588846,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782569588900,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782569592032,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782569593610,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782569593657,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:bundling:failed","_t":1782569803613,"id":"p","message":"SyntaxError: C:\\TQOrders\\TQOrders\\App.js: Unexpected token (774:12)\n\n  772 |                 )}\n  773 |               />*/\n> 774 |             )}\n      |             ^\n  775 |           </View>\n  776 |         ) : (\n  777 |           <>","importStack":null,"filename":"App.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:client_log","_t":1782569823678,"level":"error","data":["[ReferenceError: Property 'SectionList' doesn't exist]"]}
+{"_e":"metro:client_log","_t":1782569867794,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782569881948,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782569882005,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782569884256,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782569884341,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782570304625,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782570304700,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782570306780,"level":"log","data":["{\"finished_at\": \"2026-06-27T14:24:48.248Z\", \"items\": [], \"order_note\": \"\", \"started_at\": \"2026-06-27T14:24:48.248Z\", \"table_id\": 1, \"table_name\": \"M1\", \"total_price\": 0}"]}
+{"_e":"metro:client_log","_t":1782570306842,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782570306842,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782570400082,"level":"error","data":["[Error: Uncaught (in promise, id: 1): \"RangeError: Date value out of bounds\"]"]}
+{"_e":"metro:client_log","_t":1782570427020,"level":"error","data":["[TypeError: Cannot read property 'length' of null]"]}
+{"_e":"metro:client_log","_t":1782570435488,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782570439433,"level":"error","data":["[TypeError: Cannot read property 'length' of null]"]}
+{"_e":"metro:bundling:failed","_t":1782570473877,"id":"p","message":"SyntaxError: C:\\TQOrders\\TQOrders\\db.js: Identifier 'clearHistory' has already been declared. (243:22)\n\n  241 | }\n  242 |\n> 243 | export async function clearHistory() {\n      |                       ^\n  244 |   await setStorageData(HISTORY_KEY, []);\n  245 | }\n  246 |","importStack":null,"filename":"db.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:failed","_t":1782570476242,"id":"p","message":"SyntaxError: C:\\TQOrders\\TQOrders\\db.js: Identifier 'clearHistory' has already been declared. (243:22)\n\n  241 | }\n  242 |\n> 243 | export async function clearHistory() {\n      |                       ^\n  244 |   await setStorageData(HISTORY_KEY, []);\n  245 | }\n  246 |","importStack":null,"filename":"db.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:failed","_t":1782570501286,"id":"p","message":"SyntaxError: C:\\TQOrders\\TQOrders\\db.js: Identifier 'clearHistory' has already been declared. (243:22)\n\n  241 | }\n  242 |\n> 243 | export async function clearHistory() {\n      |                       ^\n  244 |   await setStorageData(HISTORY_KEY, []);\n  245 | }\n  246 |","importStack":null,"filename":"db.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:started","_t":1782570505545,"id":"3z","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1782570505545,"id":"3z","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782570505547,"id":"3z","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782570505663,"id":"3z","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782570505764,"id":"3z","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782570505864,"id":"3z","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782570505964,"id":"3z","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782570506064,"id":"3z","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782570506164,"id":"3z","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782570506284,"id":"3z","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1782570506406,"id":"3z","message":"SyntaxError: C:\\TQOrders\\TQOrders\\db.js: Identifier 'clearHistory' has already been declared. (243:22)\n\n  241 | }\n  242 |\n> 243 | export async function clearHistory() {\n      |                       ^\n  244 |   await setStorageData(HISTORY_KEY, []);\n  245 | }\n  246 |","importStack":null,"filename":"db.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:started","_t":1782570528156,"id":"40","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1782570528156,"id":"40","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782570528157,"id":"40","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782570528261,"id":"40","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782570528361,"id":"40","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1782570528461,"id":"40","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1782570528578,"id":"40","total":1,"ms":421.3868}
+{"_e":"metro:client_log","_t":1782570529467,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782570531154,"level":"error","data":["[TypeError: Cannot read property 'length' of null]"]}
+{"_e":"metro:bundling:started","_t":1782570565744,"id":"43","platform":"android","environment":null,"entry":"node_modules\\expo\\AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1782570565745,"id":"43","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1782570565772,"id":"43","total":1,"ms":27.5204}
+{"_e":"metro:client_log","_t":1782570566921,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782570597218,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782570597268,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782570615937,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782570615997,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782570617191,"level":"log","data":["{\"finished_at\": \"2026-06-27T14:29:58.634Z\", \"items\": [], \"order_note\": \"\", \"started_at\": \"2026-06-27T14:29:58.634Z\", \"table_id\": 1, \"table_name\": \"M1\", \"total_price\": 0}"]}
+{"_e":"metro:client_log","_t":1782570617282,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782570617282,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782570635436,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782570635519,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782570637581,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782570638807,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782570638864,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782570639935,"level":"log","data":["{\"finished_at\": \"2026-06-27T14:30:21.398Z\", \"items\": [{\"id\": 1, \"name\": \"Sandwich\", \"note\": \"\", \"price\": 5.5, \"quantity\": 1}], \"order_note\": \"\", \"started_at\": \"2026-06-27T14:30:19.040Z\", \"table_id\": 1, \"table_name\": \"M1\", \"total_price\": 5.5}"]}
+{"_e":"metro:client_log","_t":1782570639981,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782570639981,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782570772550,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782570904542,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782570904589,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782570906258,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782570907443,"level":"log","data":["{\"finished_at\": \"2026-06-27T14:34:48.889Z\", \"items\": [{\"id\": 1, \"name\": \"Sandwich\", \"note\": \"\", \"price\": 5.5, \"quantity\": 1}], \"order_note\": \"\", \"started_at\": \"2026-06-27T14:34:48.889Z\", \"table_id\": 1, \"table_name\": \"M1\", \"total_price\": 5.5}"]}
+{"_e":"metro:client_log","_t":1782570907495,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782570907495,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782571391803,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782571391883,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782571393406,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782571393483,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782571394494,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782571400164,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782571403730,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782571405068,"level":"log","data":["{\"finished_at\": \"2026-06-27T14:43:06.516Z\", \"items\": [{\"id\": 1, \"name\": \"Sandwich\", \"note\": \"Ggy\", \"price\": 5.5, \"quantity\": 1}], \"order_note\": \"Uhh\", \"started_at\": \"2026-06-27T14:43:06.516Z\", \"table_id\": 6, \"table_name\": \"M5\", \"total_price\": 5.5}"]}
+{"_e":"metro:client_log","_t":1782571405149,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782571405149,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782571474112,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782571474162,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782571477889,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782571478900,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782571478950,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782571480322,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782571482263,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782571482336,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782571484554,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782571484627,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782571490181,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782571490264,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782571491433,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782571491483,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782571493303,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782571495370,"level":"log","data":["{\"finished_at\": \"2026-06-27T14:44:36.829Z\", \"items\": [{\"id\": 1, \"name\": \"Bagel\", \"note\": \"\", \"price\": 3, \"quantity\": 1}], \"order_note\": \"\", \"started_at\": \"2026-06-27T14:44:36.829Z\", \"table_id\": 5, \"table_name\": \"BAR\", \"total_price\": 3}"]}
+{"_e":"metro:client_log","_t":1782571495494,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:client_log","_t":1782571495494,"level":"log","data":["[TypeError: Cannot convert undefined value to object]"]}
+{"_e":"metro:bundling:failed","_t":1782571973865,"id":"3z","message":"Unable to resolve \"./assets/turquoise-logo.png\" from \"App.js\"\n  714 |         <View style={styles.homeHeader}>\n  715 |           <View style={styles.brandRow}>\n> 716 |             <Image source={require('./assets/turquoise-logo.png')} style={styles.logo} />\n      |                                     ^\n  717 |             <View>\n  718 |               <Text style={styles.title}>Turquoise</Text>\n  719 |               <Text style={styles.subtitle}>Bakery & Brunch</Text>","importStack":"\u001b[1mImport stack:\u001b[22m\n\n\u001b[90m \u001b[39mApp.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./assets/turquoise-logo.png\"\u001b[39m\n\n\u001b[90m \u001b[39m\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./App\"\u001b[39m\n","filename":null,"targetModuleName":"./assets/turquoise-logo.png","originModulePath":"App.js"}
+{"_e":"metro:bundling:failed","_t":1782571975842,"id":"3z","message":"Unable to resolve \"./assets/turquoise-logo.png\" from \"App.js\"\n  714 |         <View style={styles.homeHeader}>\n  715 |           <View style={styles.brandRow}>\n> 716 |             <Image source={require('./assets/turquoise-logo.png')} style={styles.logo} />\n      |                                     ^\n  717 |             <View>\n  718 |               <Text style={styles.title}>Turquoise</Text>\n  719 |               <Text style={styles.subtitle}>Bakery & Brunch</Text>","importStack":"\u001b[1mImport stack:\u001b[22m\n\n\u001b[90m \u001b[39mApp.js\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./assets/turquoise-logo.png\"\u001b[39m\n\n\u001b[90m \u001b[39m\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./App\"\u001b[39m\n","filename":null,"targetModuleName":"./assets/turquoise-logo.png","originModulePath":"App.js"}

@@ -54,7 +54,7 @@ async function markTableStarted(tableId) {
 export async function initDb() {
   // await AsyncStorage.clear();
   const existingTables = await getStorageData(TABLES_KEY);
-  const DESIRED_TABLE_COUNT = 17; // 11 for Salon + 6 for Terasa
+  const DESIRED_TABLE_COUNT = 18; // 11 for Salon + 6 for Terasa
 
   if (existingTables.length === 0) {
     // Create Salon tables (1-11 with M1-M10 + BAR names)
@@ -67,8 +67,8 @@ export async function initDb() {
       order_started_at: null,
     }));
 
-    // Create Terasa tables (12-17 with T1-T6 names)
-    const terasaTables = Array.from({ length: 6 }, (_, i) => ({
+    // Create Terasa tables (12-18 with T1-T7 names)
+    const terasaTables = Array.from({ length: 7 }, (_, i) => ({
       id: i + 12,
       name: `T${i + 1}`,
       floor: 'Terasa',
@@ -87,16 +87,6 @@ export async function initDb() {
     }));
 
     const missing = [];
-    for (let i = existingTables.length + 1; i <= DESIRED_TABLE_COUNT; i++) {
-      missing.push({
-        id: i,
-        name: `T${i - 11}`,
-        floor: 'Terasa',
-        status: 'open',
-        note: '',
-        order_started_at: null,
-      });
-    }
 
     const merged = updated.concat(missing);
     await setStorageData(TABLES_KEY, merged);
@@ -235,6 +225,23 @@ export async function clearAllTables() {
 
 export async function getHistory() {
   return getStorageData(HISTORY_KEY);
+}
+
+export async function clearHistory1() {
+  //await setStorageData(HISTORY_KEY, []);
+  await addHistoryEntry({
+        table_id: "T1",
+        table_name: "T1",
+        items: [],
+        order_note: "ceva",
+        started_at: new Date("2026-06-25T14:25:22.44").toISOString(),
+        finished_at: new Date("2026-06-25T14:25:23.44").toISOString(),
+        total_price: 100,
+      });
+}
+
+export async function clearHistory() {
+  await setStorageData(HISTORY_KEY, []);
 }
 
 export async function addHistoryEntry(entry) {
