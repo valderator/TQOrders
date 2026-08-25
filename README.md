@@ -95,6 +95,18 @@ vercel --prod
 After the first deploy, add the Vercel URL to **Supabase → Authentication → URL Configuration → Site URL**
 so password resets and email links point at the right domain.
 
+### Troubleshooting
+
+| Symptom | Cause | Fix |
+| --- | --- | --- |
+| Header still says **Local mode** after adding keys | `EXPO_PUBLIC_*` values are inlined at build time | Restart `npm run web`; on Vercel trigger a **redeploy** after adding the variables |
+| Sign in fails with *Invalid login credentials* | The dashboard user was created without confirming the email | Supabase → Authentication → Users → **Auto Confirm User** |
+| Signed in, but no floors/tables/menu appear | Seed data was created while in local mode and never uploaded | Sign in as admin, **Me → Reset local cache**, then **Sync now** |
+| Admin actions missing | Profile row still says `employee` | `update public.profiles set role = 'admin' where email = '…';` |
+| `P0001: Only administrators can change roles` in the SQL Editor | Old version of `guard_profile_changes()` blocked direct SQL | Re-run `supabase/schema.sql` (it is idempotent), then retry the update |
+| *Sync issue* pill with a `42501` error | An RLS policy rejected the write | Confirm `supabase/schema.sql` ran completely and the account is the intended role |
+| Project unreachable after a week | Free projects pause after 7 days of inactivity | Resume it from the Supabase dashboard |
+
 ## 4. Roles
 
 | Capability | Admin | Employee |

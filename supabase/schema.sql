@@ -170,6 +170,8 @@ create trigger on_auth_user_created
   for each row execute function public.handle_new_user();
 
 -- Employees may edit their own name but never their role or active flag.
+-- auth.uid() is NULL for direct SQL / service_role access, which RLS already
+-- gates, so those callers are let through.
 create or replace function public.guard_profile_changes()
 returns trigger
 language plpgsql
@@ -177,7 +179,7 @@ security definer
 set search_path = public
 as $$
 begin
-  if public.is_admin() then
+  if auth.uid() is null or public.is_admin() then
     return new;
   end if;
   if new.role is distinct from old.role or new.active is distinct from old.active then
