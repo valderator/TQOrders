@@ -1,32 +1,134 @@
-# TQOrders
+# Turquoise Orders
 
-A simple Expo React Native cafeteria app for Android and iOS with local SQLite storage.
+Cafeteria floor-service app for **Turquoise Bakery & Brunch**. One Expo codebase that runs in the
+browser (Android + iOS + desktop) and can also be built as a native app.
 
-## Features
-- Table list screen
-- Table-specific order view
-- Add menu items to a table order
-- Update quantity or remove items
-- Local SQLite persistence using `expo-sqlite`
+- Floor plans with drag-and-drop table layout (Salon, Terasa, or any floor you add)
+- Per-table orders with item notes, order notes and payment method
+- Order history grouped per day, with a full daily breakdown (top products, categories, waiters, revenue per hour)
+- Work calendar: clock in/out, attendance per day, hours worked, orders served and revenue per employee
+- Two roles: **admin** (everything) and **employee** (orders + read-only history/calendar)
+- **Offline first**: every change is written to local storage immediately and pushed to Supabase when the connection is back
 
-## Setup
+---
 
-1. Open a terminal
-2. Install dependencies:
-   - `npm install`
-3. Start the Expo development server:
-   - `npm start`
+## 1. Run it locally
 
-## Run
-- `npm run android`
-- `npm run ios`
-- `npm run web`
+```bash
+npm install
+npm run web        # browser
+npm start          # Expo Go / native
+```
 
-## Files
-- `App.js` — main app view and table/order UI
-- `db.js` — SQLite initialization and CRUD helpers
-- `data/menu.js` — sample cafeteria menu items
+Without Supabase keys the app starts in **local mode** — everything is stored on the device and two demo
+accounts are available:
 
-## Notes
-- The app initializes default tables and menu items on first launch.
-- Orders are stored locally and restored when the app restarts.
+| Email | PIN | Role |
+| --- | --- | --- |
+| `admin@local` | `1234` | admin |
+| `staff@local` | `1111` | employee |
+
+## 2. Connect the free Supabase backend
+
+1. Create a free project at <https://supabase.com> (Free tier: 500 MB database, unlimited API requests).
+2. Open **SQL Editor → New query**, paste the contents of [supabase/schema.sql](supabase/schema.sql) and run it.
+   This creates every table, the `updated_at` triggers, row-level security policies and realtime publication.
+3. Go to **Project Settings → API** and copy the *Project URL* and the *anon public* key.
+4. Create a `.env.local` file next to `package.json`:
+
+   ```env
+   EXPO_PUBLIC_SUPABASE_URL=https://xxxxxxxx.supabase.co
+   EXPO_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOi...
+   ```
+
+5. Create your first user in **Authentication → Users → Add user** (email + password), then promote it:
+
+   ```sql
+   update public.profiles set role = 'admin' where email = 'you@example.com';
+   ```
+
+6. Restart `npm run web`. The header pill now shows **Synced** instead of **Local mode**.
+
+Every additional employee is created the same way (Authentication → Users). New accounts default to the
+`employee` role; an admin can flip roles from **Manage → Team**.
+
+### How offline works
+
+- All reads come from a local cache (`localStorage` on web, `AsyncStorage` on native).
+- All writes update the cache instantly and are appended to an **outbox** queue.
+- A background loop flushes the outbox every 20 s, whenever the browser fires an `online` event, and on
+  demand from the sync pill in the header.
+- Supabase Realtime pushes other devices' changes into the cache as they happen.
+- Conflicts resolve by `updated_at` (last write wins).
+
+The header pill shows the live state: `Synced`, `Syncing`, `Offline · N` (N = queued changes), `Sync issue`
+or `Local mode`.
+
+## 3. Deploy free on Vercel
+
+The repository already contains [vercel.json](vercel.json), which builds a static web export into `dist/`
+and serves it as a single-page app.
+
+### Option A — dashboard (no CLI)
+
+1. Push this folder to a GitHub repository.
+2. Go to <https://vercel.com/new>, import the repository.
+3. Framework preset: **Other**. Build command and output directory are picked up from `vercel.json`.
+4. Add the two environment variables (`EXPO_PUBLIC_SUPABASE_URL`, `EXPO_PUBLIC_SUPABASE_ANON_KEY`) for the
+   Production, Preview and Development environments.
+5. **Deploy**. Every push to `main` redeploys automatically.
+
+### Option B — CLI
+
+```bash
+npm i -g vercel
+vercel login
+vercel link
+vercel env add EXPO_PUBLIC_SUPABASE_URL
+vercel env add EXPO_PUBLIC_SUPABASE_ANON_KEY
+vercel --prod
+```
+
+> The Supabase anon key is meant to be public — access is controlled by the row-level security policies in
+> `supabase/schema.sql`. Never ship the `service_role` key.
+
+After the first deploy, add the Vercel URL to **Supabase → Authentication → URL Configuration → Site URL**
+so password resets and email links point at the right domain.
+
+## 4. Roles
+
+| Capability | Admin | Employee |
+| --- | :---: | :---: |
+| Take and edit orders | ✅ | ✅ |
+| Finish orders / clock in / clock out | ✅ | ✅ |
+| Read history and daily breakdown | ✅ | ✅ |
+| Read own work calendar | ✅ | ✅ |
+| Read everyone's calendar | ✅ | ❌ |
+| Edit / delete history | ✅ | ❌ |
+| Edit menu, floors, tables | ✅ | ❌ |
+| Manage team roles and shifts | ✅ | ❌ |
+
+Roles are enforced twice: the UI hides admin actions, and the Supabase RLS policies reject unauthorised
+writes even if someone calls the API directly.
+
+## 5. Project structure
+
+```
+App.js                    entry point, hydrates the offline cache
+src/
+  AppShell.js             navigation shell (bottom tabs / side rail)
+  theme.js                design tokens
+  components/             UI kit, header, nav bar, floor plan
+  context/                AuthContext (roles) and DataContext (reactive data)
+  data/
+    store.js              offline cache, outbox and Supabase sync engine
+    api.js                domain operations (orders, history, shifts, menu…)
+    seed.js               default floors, tables and menu
+  hooks/, lib/            responsive helpers, dates, storage, connectivity
+supabase/schema.sql       database, RLS policies, triggers
+legacy/                   the previous single-file implementation, kept for reference
+```
+
+## 6. Native builds
+
+The Android/iOS configuration is unchanged; `eas build` still works via [eas.json](eas.json).
