@@ -114,14 +114,26 @@ so password resets and email links point at the right domain.
 | Take and edit orders | ✅ | ✅ |
 | Finish orders / clock in / clock out | ✅ | ✅ |
 | Read history and daily breakdown | ✅ | ✅ |
-| Read own work calendar | ✅ | ✅ |
-| Read everyone's calendar | ✅ | ❌ |
+| Open a calendar day and see own shift + own orders | ✅ | ✅ |
+| Open a calendar day and see **every** employee who worked, with their shifts and orders | ✅ | ❌ |
+| Add or edit shifts for anyone | ✅ | ❌ |
 | Edit / delete history | ✅ | ❌ |
 | Edit menu, floors, tables | ✅ | ❌ |
-| Manage team roles and shifts | ✅ | ❌ |
+| Create accounts and promote/demote admins | ✅ | ❌ |
 
 Roles are enforced twice: the UI hides admin actions, and the Supabase RLS policies reject unauthorised
-writes even if someone calls the API directly.
+writes even if someone calls the API directly. New accounts are always created as `employee` — the signup
+trigger ignores any client-supplied role, so an account cannot self-promote.
+
+### Adding team members from the app
+
+**Manage → Team → Add team member** creates the Supabase login and the profile in one step, using a
+throw-away client so your own session is untouched. Give the new person the temporary password you set.
+For them to sign in immediately, turn off **Supabase → Authentication → Providers → Email → Confirm email**;
+otherwise they must click the confirmation link first.
+
+Use **Make admin** / **Make employee** on any row to change a role. You cannot change your own role, which
+prevents locking yourself out of the last admin account.
 
 ## 5. Project structure
 

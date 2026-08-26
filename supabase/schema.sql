@@ -144,7 +144,8 @@ as $$
   );
 $$;
 
--- Every new auth user gets an employee profile automatically.
+-- Every new auth user gets an employee profile automatically. The role is never
+-- taken from client-supplied metadata; an admin promotes accounts afterwards.
 create or replace function public.handle_new_user()
 returns trigger
 language plpgsql
@@ -157,7 +158,7 @@ begin
     new.id,
     new.email,
     coalesce(new.raw_user_meta_data ->> 'full_name', new.email),
-    coalesce(new.raw_user_meta_data ->> 'role', 'employee')
+    'employee'
   )
   on conflict (id) do nothing;
   return new;

@@ -1,5 +1,5 @@
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
-import { isSupabaseConfigured, supabase } from '../lib/supabase';
+import { isSupabaseConfigured, supabase, createIsolatedClient } from '../lib/supabase';
 import { storage } from '../lib/storage';
 import { DEFAULT_LOCAL_USERS } from '../data/seed';
 import { getProfiles, saveProfile } from '../data/api';
@@ -131,6 +131,23 @@ export function AuthProvider({ children }) {
     setUser(null);
   }, []);
 
+  /** Admin-only: registers a new login without touching the current session. */
+  const createUser = useCallback(async ({ email, password, full_name }) => {
+    if (!isSupabaseConfigured) throw new Error('Cloud accounts require Supabase to be configured.');
+    const client = createIsolatedClient();
+    const { data, error } = await client.auth.signUp({
+      email: String(email).trim(),
+      password,
+      options: { data: { full_name } },
+    });
+    if (error) throw error;
+    if (!data?.user) throw new Error('Sign-up returned no user. Enable email sign-ups in Supabase.');
+    if (Array.isArray(data.user.identities) && data.user.identities.length === 0) {
+      throw new Error('An account with this email already exists.');
+    }
+    return { user: data.user, needsConfirmation: !data.session };
+  }, []);
+
   const value = useMemo(
     () => ({
       user,
@@ -138,10 +155,11 @@ export function AuthProvider({ children }) {
       authError,
       signIn,
       signOut,
+      createUser,
       isAdmin: user?.role === 'admin',
       localMode: !isSupabaseConfigured,
     }),
-    [user, initializing, authError, signIn, signOut]
+    [user, initializing, authError, signIn, signOut, createUser]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

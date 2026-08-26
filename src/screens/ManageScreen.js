@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { Badge, Button, Card, ConfirmDialog, EmptyState, IconButton, Input, SegmentedControl, Sheet } from '../components/ui';
 import { colors, money, radius, spacing, typography } from '../theme';
 import { useData } from '../context/DataContext';
@@ -322,8 +323,41 @@ function PercentInput({ label, value, onChange }) {
 
 function TeamManager() {
   const { profiles, api } = useData();
-  const { localMode, user } = useAuth();
+  const { localMode, user, createUser } = useAuth();
   const [draft, setDraft] = useState(null);
+  const [invite, setInvite] = useState(null);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState(null);
+  const [notice, setNotice] = useState(null);
+
+  const submitInvite = async () => {
+    if (!invite.email.trim() || invite.password.length < 6) {
+      setError('An email and a password of at least 6 characters are required.');
+      return;
+    }
+    setBusy(true);
+    setError(null);
+    try {
+      const { user: created, needsConfirmation } = await createUser(invite);
+      api.saveProfile({
+        id: created.id,
+        email: invite.email.trim(),
+        full_name: invite.full_name || invite.email.trim(),
+        role: invite.role,
+        active: true,
+      });
+      setNotice(
+        needsConfirmation
+          ? `${invite.email} was created but must confirm their email before signing in.`
+          : `${invite.email} can sign in now as ${invite.role}.`
+      );
+      setInvite(null);
+    } catch (err) {
+      setError(err?.message || 'Could not create the account.');
+    } finally {
+      setBusy(false);
+    }
+  };
 
   return (
     <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
@@ -332,17 +366,26 @@ function TeamManager() {
         <Text style={typography.muted}>
           {localMode
             ? 'Local mode: accounts live on this device only. Add Supabase keys to share them across devices.'
-            : 'Create the login in Supabase → Authentication → Users, then set the role here. New sign-ins default to employee.'}
+            : 'New accounts always start as employees. Promote them to admin here once they exist.'}
         </Text>
       </Card>
 
-      {localMode ? (
-        <Button
-          title="New local account"
-          icon="person-add-outline"
-          variant="primary"
-          onPress={() => setDraft({ email: '', full_name: '', role: 'employee', pin: '', active: true })}
-        />
+      <Button
+        title={localMode ? 'New local account' : 'Add team member'}
+        icon="person-add-outline"
+        variant="primary"
+        onPress={() =>
+          localMode
+            ? setDraft({ email: '', full_name: '', role: 'employee', pin: '', active: true })
+            : setInvite({ email: '', full_name: '', password: '', role: 'employee' })
+        }
+      />
+
+      {notice ? (
+        <Card style={styles.noticeCard}>
+          <Ionicons name="checkmark-circle-outline" size={18} color={colors.success} />
+          <Text style={[typography.muted, { flex: 1 }]}>{notice}</Text>
+        </Card>
       ) : null}
 
       {profiles.map(profile => (
@@ -353,9 +396,73 @@ function TeamManager() {
           </View>
           <Badge label={profile.role} tone={profile.role === 'admin' ? 'accent' : 'neutral'} />
           <Badge label={profile.active === false ? 'Disabled' : 'Active'} tone={profile.active === false ? 'danger' : 'success'} />
+          {profile.id === user?.id ? null : (
+            <Button
+              title={profile.role === 'admin' ? 'Make employee' : 'Make admin'}
+              icon={profile.role === 'admin' ? 'arrow-down-outline' : 'shield-checkmark-outline'}
+              variant="outline"
+              size="sm"
+              onPress={() => api.saveProfile({ ...profile, role: profile.role === 'admin' ? 'employee' : 'admin' })}
+            />
+          )}
           <IconButton icon="create-outline" size={34} onPress={() => setDraft({ ...profile })} />
         </Card>
       ))}
+
+      <Sheet
+        visible={invite !== null}
+        title="Add team member"
+        subtitle="Creates the login and the profile in one step"
+        onClose={() => {
+          setInvite(null);
+          setError(null);
+        }}
+        footer={
+          <>
+            <Button
+              title="Cancel"
+              variant="outline"
+              style={{ flex: 1 }}
+              onPress={() => {
+                setInvite(null);
+                setError(null);
+              }}
+            />
+            <Button title="Create account" variant="primary" style={{ flex: 1 }} loading={busy} onPress={submitInvite} />
+          </>
+        }
+      >
+        <Input
+          value={invite?.full_name || ''}
+          onChangeText={text => setInvite(prev => ({ ...prev, full_name: text }))}
+          placeholder="Full name"
+        />
+        <Input
+          value={invite?.email || ''}
+          onChangeText={text => setInvite(prev => ({ ...prev, email: text }))}
+          placeholder="Email"
+          autoCapitalize="none"
+          keyboardType="email-address"
+        />
+        <Input
+          value={invite?.password || ''}
+          onChangeText={text => setInvite(prev => ({ ...prev, password: text }))}
+          placeholder="Temporary password (min. 6 characters)"
+          secureTextEntry
+        />
+        <View style={styles.rowGap}>
+          {['employee', 'admin'].map(role => (
+            <Pressable key={role} onPress={() => setInvite(prev => ({ ...prev, role }))}>
+              <Badge label={role} tone={invite?.role === role ? 'brand' : 'neutral'} />
+            </Pressable>
+          ))}
+        </View>
+        {error ? <Text style={styles.errorText}>{error}</Text> : null}
+        <Text style={typography.tiny}>
+          Share the password with the new member and ask them to change it later. Turn off “Confirm email” in Supabase →
+          Authentication → Providers → Email so they can sign in immediately.
+        </Text>
+      </Sheet>
 
       <Sheet
         visible={draft !== null}
@@ -425,4 +532,6 @@ const styles = StyleSheet.create({
   rowCard: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, padding: spacing.md, borderRadius: radius.md },
   rowTitle: { fontSize: 15, fontWeight: '700', color: colors.text },
   price: { fontSize: 14, fontWeight: '800', color: colors.brand },
+  noticeCard: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, padding: spacing.md },
+  errorText: { fontSize: 13, color: colors.danger },
 });
