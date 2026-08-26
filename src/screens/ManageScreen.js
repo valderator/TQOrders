@@ -64,9 +64,13 @@ function MenuManager() {
 
       {visible.map(item => (
         <Card key={item.id} style={styles.rowCard}>
-          <View style={{ flex: 1, gap: 2 }}>
-            <Text style={styles.rowTitle}>{item.name}</Text>
-            <Text style={typography.tiny}>{item.category}</Text>
+          <View style={{ flex: 1, minWidth: 0, gap: 2 }}>
+            <Text style={styles.rowTitle} numberOfLines={1}>
+              {item.name}
+            </Text>
+            <Text style={typography.tiny} numberOfLines={1}>
+              {item.category}
+            </Text>
           </View>
           <Text style={styles.price}>{money(item.price)}</Text>
           <Badge label={item.available === false ? 'Hidden' : 'Live'} tone={item.available === false ? 'warning' : 'success'} />
@@ -308,6 +312,15 @@ function TableManager() {
   );
 }
 
+function initials(profile) {
+  return String(profile?.full_name || profile?.email || '?')
+    .split(/[\s@._-]+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map(part => part[0].toUpperCase())
+    .join('');
+}
+
 function PercentInput({ label, value, onChange }) {
   return (
     <View style={{ flex: 1, gap: 4 }}>
@@ -388,26 +401,47 @@ function TeamManager() {
         </Card>
       ) : null}
 
-      {profiles.map(profile => (
-        <Card key={profile.id} style={styles.rowCard}>
-          <View style={{ flex: 1, gap: 2 }}>
-            <Text style={styles.rowTitle}>{profile.full_name || profile.email}</Text>
-            <Text style={typography.tiny}>{profile.email}</Text>
-          </View>
-          <Badge label={profile.role} tone={profile.role === 'admin' ? 'accent' : 'neutral'} />
-          <Badge label={profile.active === false ? 'Disabled' : 'Active'} tone={profile.active === false ? 'danger' : 'success'} />
-          {profile.id === user?.id ? null : (
-            <Button
-              title={profile.role === 'admin' ? 'Make employee' : 'Make admin'}
-              icon={profile.role === 'admin' ? 'arrow-down-outline' : 'shield-checkmark-outline'}
-              variant="outline"
-              size="sm"
-              onPress={() => api.saveProfile({ ...profile, role: profile.role === 'admin' ? 'employee' : 'admin' })}
-            />
-          )}
-          <IconButton icon="create-outline" size={34} onPress={() => setDraft({ ...profile })} />
-        </Card>
-      ))}
+      {profiles.map(profile => {
+        const isSelf = profile.id === user?.id;
+        return (
+          <Card key={profile.id} style={styles.memberCard}>
+            <View style={styles.memberTop}>
+              <View style={styles.avatar}>
+                <Text style={styles.avatarText}>{initials(profile)}</Text>
+              </View>
+              <View style={styles.memberIdentity}>
+                <Text style={styles.rowTitle} numberOfLines={1}>
+                  {profile.full_name || profile.email}
+                </Text>
+                <Text style={typography.tiny} numberOfLines={1}>
+                  {profile.email}
+                </Text>
+              </View>
+              <IconButton icon="create-outline" size={34} onPress={() => setDraft({ ...profile })} />
+            </View>
+
+            <View style={styles.memberBadges}>
+              <Badge label={profile.role} tone={profile.role === 'admin' ? 'accent' : 'neutral'} />
+              <Badge
+                label={profile.active === false ? 'Disabled' : 'Active'}
+                tone={profile.active === false ? 'danger' : 'success'}
+              />
+              {isSelf ? <Badge label="you" tone="brand" icon="person-outline" /> : null}
+            </View>
+
+            {isSelf ? null : (
+              <Button
+                title={profile.role === 'admin' ? 'Make employee' : 'Make admin'}
+                icon={profile.role === 'admin' ? 'arrow-down-outline' : 'shield-checkmark-outline'}
+                variant="outline"
+                size="sm"
+                full
+                onPress={() => api.saveProfile({ ...profile, role: profile.role === 'admin' ? 'employee' : 'admin' })}
+              />
+            )}
+          </Card>
+        );
+      })}
 
       <Sheet
         visible={invite !== null}
@@ -534,4 +568,17 @@ const styles = StyleSheet.create({
   price: { fontSize: 14, fontWeight: '800', color: colors.brand },
   noticeCard: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, padding: spacing.md },
   errorText: { fontSize: 13, color: colors.danger },
+  memberCard: { padding: spacing.md, gap: spacing.sm },
+  memberTop: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
+  memberIdentity: { flex: 1, minWidth: 0, gap: 2 },
+  memberBadges: { flexDirection: 'row', gap: spacing.xs, flexWrap: 'wrap' },
+  avatar: {
+    width: 38,
+    height: 38,
+    borderRadius: radius.pill,
+    backgroundColor: colors.brandSoft,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  avatarText: { fontSize: 13, fontWeight: '800', color: colors.brand },
 });
