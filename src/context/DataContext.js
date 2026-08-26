@@ -41,6 +41,7 @@ export function DataProvider({ children }) {
       tables,
       menuItems,
       categories: api.getMenuCategories(),
+      categoryRecords: api.getCategoryRecords(),
       history,
       historyByDay: api.groupHistoryByDay(history),
       shifts,

@@ -9,6 +9,15 @@ export function ensureSeed() {
   seedIfEmpty('floors', DEFAULT_FLOORS);
   seedIfEmpty('dining_tables', DEFAULT_TABLES);
   seedIfEmpty('menu_items', DEFAULT_MENU_ITEMS);
+  seedCategoriesFromItems();
+}
+
+/** Bootstraps the category list from whatever the menu already uses. */
+function seedCategoriesFromItems() {
+  if (selectAll('menu_categories').length > 0) return;
+  Array.from(new Set(getMenuItems().map(item => item.category || 'Other'))).forEach((name, index) =>
+    upsert('menu_categories', { id: uuid(), name, sort_order: index })
+  );
 }
 
 /* ---------------------------------------------------------------- floors */
@@ -73,7 +82,45 @@ export function getMenuItems() {
 }
 
 export function getMenuCategories() {
-  return Array.from(new Set(getMenuItems().map(item => item.category || 'Other'))).sort();
+  const defined = getCategoryRecords().map(category => category.name);
+  const used = getMenuItems().map(item => item.category || 'Other');
+  return Array.from(new Set([...defined, ...used]));
+}
+
+export function getCategoryRecords() {
+  const seen = new Set();
+  return selectAll('menu_categories')
+    .sort(byOrder)
+    .filter(category => {
+      if (seen.has(category.name)) return false;
+      seen.add(category.name);
+      return true;
+    });
+}
+
+export function countItemsInCategory(name) {
+  return getMenuItems().filter(item => (item.category || 'Other') === name).length;
+}
+
+export function saveMenuCategory(input) {
+  const previous = input.id ? selectById('menu_categories', input.id) : null;
+  const name = String(input.name || '').trim();
+  if (!name) return null;
+  const record = upsert('menu_categories', {
+    id: input.id || uuid(),
+    name,
+    sort_order: input.sort_order ?? getCategoryRecords().length,
+  });
+  if (previous && previous.name !== name) {
+    getMenuItems()
+      .filter(item => item.category === previous.name)
+      .forEach(item => upsert('menu_items', { ...item, category: name }));
+  }
+  return record;
+}
+
+export function deleteMenuCategory(categoryId) {
+  remove('menu_categories', categoryId);
 }
 
 export function saveMenuItem(input) {

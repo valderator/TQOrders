@@ -7,6 +7,7 @@ export const COLLECTIONS = {
   profiles: 'profiles',
   floors: 'floors',
   dining_tables: 'dining_tables',
+  menu_categories: 'menu_categories',
   menu_items: 'menu_items',
   open_orders: 'open_orders',
   order_items: 'order_items',

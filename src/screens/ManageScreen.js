@@ -41,8 +41,9 @@ export default function ManageScreen() {
 }
 
 function MenuManager() {
-  const { menuItems, categories, api } = useData();
+  const { menuItems, categories, categoryRecords, api } = useData();
   const [draft, setDraft] = useState(null);
+  const [categoryDraft, setCategoryDraft] = useState(null);
   const [confirm, setConfirm] = useState({ visible: false });
   const [filter, setFilter] = useState('');
 
@@ -50,8 +51,66 @@ function MenuManager() {
     `${item.name} ${item.category}`.toLowerCase().includes(filter.trim().toLowerCase())
   );
 
+  const askDeleteCategory = category => {
+    const count = api.countItemsInCategory(category.name);
+    if (count > 0) {
+      setConfirm({
+        visible: true,
+        title: `“${category.name}” is still in use`,
+        message: `${count} product${count === 1 ? '' : 's'} belong to it. Move or delete them first, then remove the category.`,
+        confirmText: 'Got it',
+        cancelText: 'Close',
+        onConfirm: () => setConfirm({ visible: false }),
+      });
+      return;
+    }
+    setConfirm({
+      visible: true,
+      tone: 'danger',
+      title: `Delete “${category.name}”`,
+      message: 'The category disappears from the waiter menu filters.',
+      confirmText: 'Delete',
+      onConfirm: () => {
+        api.deleteMenuCategory(category.id);
+        setConfirm({ visible: false });
+      },
+    });
+  };
+
   return (
     <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
+      <Card style={{ gap: spacing.sm }}>
+        <View style={styles.rowSplit}>
+          <Text style={typography.section}>Categories</Text>
+          <Button
+            title="New category"
+            icon="add"
+            variant="outline"
+            size="sm"
+            onPress={() => setCategoryDraft({ name: '' })}
+          />
+        </View>
+        <Text style={typography.tiny}>These are the filter chips waiters see when they open a table menu.</Text>
+        <View style={styles.rowGap}>
+          {categoryRecords.length === 0 ? (
+            <Text style={typography.muted}>No categories yet.</Text>
+          ) : (
+            categoryRecords.map(category => (
+              <View key={category.id} style={styles.categoryChip}>
+                <Text style={styles.categoryChipText}>{category.name}</Text>
+                <Text style={styles.categoryCount}>{api.countItemsInCategory(category.name)}</Text>
+                <Pressable onPress={() => setCategoryDraft({ ...category })} hitSlop={6}>
+                  <Ionicons name="create-outline" size={15} color={colors.textMuted} />
+                </Pressable>
+                <Pressable onPress={() => askDeleteCategory(category)} hitSlop={6}>
+                  <Ionicons name="close" size={15} color={colors.danger} />
+                </Pressable>
+              </View>
+            ))
+          )}
+        </View>
+      </Card>
+
       <View style={styles.rowGap}>
         <Input value={filter} onChangeText={setFilter} placeholder="Filter products…" style={{ flex: 1 }} />
         <Button
@@ -144,6 +203,34 @@ function MenuManager() {
           icon={draft?.available === false ? 'eye-off-outline' : 'eye-outline'}
           variant="outline"
           onPress={() => setDraft(prev => ({ ...prev, available: prev.available === false }))}
+        />
+      </Sheet>
+
+      <Sheet
+        visible={categoryDraft !== null}
+        title={categoryDraft?.id ? 'Rename category' : 'New category'}
+        subtitle={categoryDraft?.id ? 'Products in this category are renamed with it' : undefined}
+        onClose={() => setCategoryDraft(null)}
+        footer={
+          <>
+            <Button title="Cancel" variant="outline" style={{ flex: 1 }} onPress={() => setCategoryDraft(null)} />
+            <Button
+              title="Save"
+              variant="primary"
+              style={{ flex: 1 }}
+              onPress={() => {
+                if (!categoryDraft.name?.trim()) return;
+                api.saveMenuCategory(categoryDraft);
+                setCategoryDraft(null);
+              }}
+            />
+          </>
+        }
+      >
+        <Input
+          value={categoryDraft?.name || ''}
+          onChangeText={text => setCategoryDraft(prev => ({ ...prev, name: text }))}
+          placeholder="Category name (Cafea, Mic dejun, Deserturi…)"
         />
       </Sheet>
 
@@ -581,4 +668,27 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   avatarText: { fontSize: 13, fontWeight: '800', color: colors.brand },
+  rowSplit: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: spacing.sm },
+  categoryChip: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    paddingVertical: 6,
+    paddingLeft: 12,
+    paddingRight: 8,
+    borderRadius: radius.pill,
+    backgroundColor: colors.surfaceAlt,
+    borderWidth: 1,
+    borderColor: colors.border,
+  },
+  categoryChipText: { fontSize: 13, fontWeight: '700', color: colors.text },
+  categoryCount: {
+    fontSize: 11,
+    fontWeight: '700',
+    color: colors.brand,
+    backgroundColor: colors.brandSoft,
+    borderRadius: radius.pill,
+    paddingHorizontal: 6,
+    paddingVertical: 1,
+  },
 });

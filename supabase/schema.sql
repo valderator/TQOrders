@@ -37,6 +37,13 @@ create table if not exists public.dining_tables (
   updated_at  timestamptz not null default now()
 );
 
+create table if not exists public.menu_categories (
+  id          text primary key,
+  name        text not null,
+  sort_order  int not null default 0,
+  updated_at  timestamptz not null default now()
+);
+
 create table if not exists public.menu_items (
   id          text primary key,
   name        text not null,
@@ -119,7 +126,7 @@ do $$
 declare t text;
 begin
   foreach t in array array[
-    'profiles', 'floors', 'dining_tables', 'menu_items',
+    'profiles', 'floors', 'dining_tables', 'menu_categories', 'menu_items',
     'open_orders', 'order_items', 'order_history', 'shifts'
   ] loop
     execute format('drop trigger if exists set_updated_at on public.%I', t);
@@ -197,20 +204,21 @@ create trigger guard_profile
 
 -- --------------------------------------------------------------------- RLS
 
-alter table public.profiles       enable row level security;
-alter table public.floors         enable row level security;
-alter table public.dining_tables  enable row level security;
-alter table public.menu_items     enable row level security;
-alter table public.open_orders    enable row level security;
-alter table public.order_items    enable row level security;
-alter table public.order_history  enable row level security;
-alter table public.shifts         enable row level security;
+alter table public.profiles         enable row level security;
+alter table public.floors           enable row level security;
+alter table public.dining_tables    enable row level security;
+alter table public.menu_categories  enable row level security;
+alter table public.menu_items       enable row level security;
+alter table public.open_orders      enable row level security;
+alter table public.order_items      enable row level security;
+alter table public.order_history    enable row level security;
+alter table public.shifts           enable row level security;
 
 do $$
 declare t text; p record;
 begin
   foreach t in array array[
-    'profiles', 'floors', 'dining_tables', 'menu_items',
+    'profiles', 'floors', 'dining_tables', 'menu_categories', 'menu_items',
     'open_orders', 'order_items', 'order_history', 'shifts'
   ] loop
     for p in select policyname from pg_policies where schemaname = 'public' and tablename = t loop
@@ -224,6 +232,7 @@ $$;
 create policy read_all on public.profiles      for select to authenticated using (true);
 create policy read_all on public.floors        for select to authenticated using (true);
 create policy read_all on public.dining_tables for select to authenticated using (true);
+create policy read_all on public.menu_categories for select to authenticated using (true);
 create policy read_all on public.menu_items    for select to authenticated using (true);
 create policy read_all on public.open_orders   for select to authenticated using (true);
 create policy read_all on public.order_items   for select to authenticated using (true);
@@ -245,6 +254,8 @@ create policy floors_write on public.floors for all to authenticated
 create policy tables_write on public.dining_tables for all to authenticated
   using (public.is_admin()) with check (public.is_admin());
 create policy menu_write on public.menu_items for all to authenticated
+  using (public.is_admin()) with check (public.is_admin());
+create policy menu_categories_write on public.menu_categories for all to authenticated
   using (public.is_admin()) with check (public.is_admin());
 
 -- Live service: any active staff member.
@@ -276,7 +287,7 @@ do $$
 declare t text;
 begin
   foreach t in array array[
-    'profiles', 'floors', 'dining_tables', 'menu_items',
+    'profiles', 'floors', 'dining_tables', 'menu_categories', 'menu_items',
     'open_orders', 'order_items', 'order_history', 'shifts'
   ] loop
     begin
